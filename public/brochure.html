@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privya Solution LLP — Company Brochure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & page setup ──────────────────────────────────── */
+    @page { size: A4 portrait; margin: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:   #2563EB;
+      --cyan:   #06B6D4;
+      --dark:   #0F172A;
+      --ink:    #1E293B;
+      --mid:    #475569;
+      --light:  #94A3B8;
+      --rule:   #E2E8F0;
+      --bg:     #F8FAFC;
+      --white:  #FFFFFF;
+      --grad:   linear-gradient(135deg, #2563EB, #06B6D4);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: white;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      font-size: 8.5pt;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Print helper ─────────────────────────────────────────── */
+    @media print {
+      body { width: 210mm; }
+      .no-print { display: none; }
+    }
+    @media screen {
+      body {
+        box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+        margin: 20px auto;
+      }
+    }
+
+    /* ── Typography ──────────────────────────────────────────── */
+    .font-heading { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+    .font-tech    { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+
+    /* ── Layout wrapper ──────────────────────────────────────── */
+    .page { padding: 0; overflow: hidden; }
+
+    /* ── HEADER ─────────────────────────────────────────────── */
+    .header {
+      background: var(--dark);
+      padding: 5mm 8mm 4.5mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6mm;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 3.5mm;
+      flex-shrink: 0;
+    }
+    .logo-icon {
+      width: 10mm;
+      height: 10mm;
+      flex-shrink: 0;
+    }
+    .logo-text-block {}
+    .logo-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12pt;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+    .logo-name span { color: #06B6D4; }
+    .logo-sub {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 6pt;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 1px;
+    }
+
+    .header-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .header-tagline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #06B6D4;
+      margin-bottom: 1.5mm;
+    }
+    .header-contacts {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4mm;
+    }
+    .header-contact {
+      font-size: 7pt;
+      color: rgba(255,255,255,0.65);
+      display: flex;
+      align-items: center;
+      gap: 1.2mm;
+    }
+    .header-contact strong { color: white; font-weight: 600; }
+
+    /* ── GRADIENT DIVIDER ────────────────────────────────────── */
+    .grad-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #2563EB, #06B6D4, #2563EB);
+    }
+
+    /* ── HERO STRIP ──────────────────────────────────────────── */
+    .hero {
+      background: var(--bg);
+      padding: 4mm 8mm;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14pt;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 1.5mm;
+    }
+    .hero-headline .accent { color: #2563EB; }
+    .hero-headline .accent2 { color: #06B6D4; }
+    .hero-sub {
+      font-size: 8.5pt;
+      color: var(--mid);
+      font-weight: 400;
+    }
+
+    /* ── CAPABILITY COLUMNS ──────────────────────────────────── */
+    .caps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--rule);
+    }
+    .cap-col {
+      padding: 3.5mm 4.5mm;
+      border-right: 1px solid var(--rule);
+    }
+    .cap-col:last-child { border-right: none; }
+    .cap-header {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: white;
+      padding: 1.5mm 2.5mm;
+      border-radius: 3px;
+      margin-bottom: 2mm;
+      text-align: center;
+    }
+    .cap-col:nth-child(1) .cap-header { background: #2563EB; }
+    .cap-col:nth-child(2) .cap-header { background: #0891b2; }
+    .cap-col:nth-child(3) .cap-header { background: #7c3aed; }
+    .cap-col:nth-child(4) .cap-header { background: #ea580c; }
+    .cap-desc {
+      font-size: 7pt;
+      color: var(--mid);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ── SECTION HEADER ──────────────────────────────────────── */
+    .section-header {
+      padding: 3mm 8mm 2.5mm;
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+      background: white;
+    }
+    .section-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--rule), transparent);
+    }
+    .section-badge {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 6pt;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #2563EB;
+      background: rgba(37,99,235,0.08);
+      border: 1px solid rgba(37,99,235,0.18);
+      padding: 0.5mm 2mm;
+      border-radius: 99px;
+    }
+
+    /* ── SOLUTIONS GRID ──────────────────────────────────────── */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      padding: 0 8mm;
+    }
+    .sol-card {
+      padding: 4mm 4mm 4mm 0;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .sol-card:nth-child(3n) { border-right: none; }
+    .sol-card:nth-child(4),
+    .sol-card:nth-child(5),
+    .sol-card:nth-child(6) { border-bottom: none; }
+    .sol-card-inner {
+      padding-left: 3mm;
+      border-left: 3px solid;
+    }
+    .sol-card:nth-child(1) .sol-card-inner { border-color: #2563EB; }
+    .sol-card:nth-child(2) .sol-card-inner { border-color: #06B6D4; }
+    .sol-card:nth-child(3) .sol-card-inner { border-color: #8B5CF6; }
+    .sol-card:nth-child(4) .sol-card-inner { border-color: #F59E0B; }
+    .sol-card:nth-child(5) .sol-card-inner { border-color: #10B981; }
+    .sol-card:nth-child(6) .sol-card-inner { border-color: #EC4899; }
+    .sol-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin-bottom: 2mm;
+    }
+    .sol-card:nth-child(1) .sol-title { color: #2563EB; }
+    .sol-card:nth-child(2) .sol-title { color: #0891b2; }
+    .sol-card:nth-child(3) .sol-title { color: #7c3aed; }
+    .sol-card:nth-child(4) .sol-title { color: #d97706; }
+    .sol-card:nth-child(5) .sol-title { color: #059669; }
+    .sol-card:nth-child(6) .sol-title { color: #db2777; }
+    .sol-list { list-style: none; }
+    .sol-list li {
+      font-size: 7.5pt;
+      color: var(--mid);
+      padding: 0.6mm 0;
+      display: flex;
+      align-items: baseline;
+      gap: 1.5mm;
+      line-height: 1.35;
+    }
+    .sol-list li::before {
+      content: '▸';
+      font-size: 6.5pt;
+      flex-shrink: 0;
+      margin-top: 0.5px;
+    }
+    .sol-card:nth-child(1) .sol-list li::before { color: #2563EB; }
+    .sol-card:nth-child(2) .sol-list li::before { color: #0891b2; }
+    .sol-card:nth-child(3) .sol-list li::before { color: #7c3aed; }
+    .sol-card:nth-child(4) .sol-list li::before { color: #d97706; }
+    .sol-card:nth-child(5) .sol-list li::before { color: #059669; }
+    .sol-card:nth-child(6) .sol-list li::before { color: #db2777; }
+
+    /* ── WHY CHOOSE US ───────────────────────────────────────── */
+    .why-section {
+      background: var(--bg);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 3mm 8mm;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2mm 6mm;
+      margin-top: 2mm;
+    }
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 2mm;
+    }
+    .why-check {
+      width: 4mm;
+      height: 4mm;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.5mm;
+    }
+    .why-check svg { width: 2.2mm; height: 2.2mm; }
+    .why-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    /* ── INDUSTRIES ──────────────────────────────────────────── */
+    .industries-section {
+      padding: 3mm 8mm;
+      background: white;
+      border-bottom: 1px solid var(--rule);
+    }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5mm;
+      margin-top: 2mm;
+    }
+    .industry-pill {
+      text-align: center;
+      padding: 1.8mm 3mm;
+      border-radius: 4px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 600;
+    }
+    .industry-pill.blue  { background: rgba(37,99,235,0.10); color: #1d4ed8; border: 1px solid rgba(37,99,235,0.18); }
+    .industry-pill.cyan  { background: rgba(6,182,212,0.10); color: #0e7490; border: 1px solid rgba(6,182,212,0.20); }
+    .industry-pill.green { background: rgba(16,185,129,0.10); color: #047857; border: 1px solid rgba(16,185,129,0.20); }
+    .industry-pill.violet{ background: rgba(139,92,246,0.10); color: #6d28d9; border: 1px solid rgba(139,92,246,0.20); }
+    .industry-pill.orange{ background: rgba(245,158,11,0.10); color: #b45309; border: 1px solid rgba(245,158,11,0.20); }
+    .industry-pill.red   { background: rgba(239,68,68,0.10);  color: #b91c1c; border: 1px solid rgba(239,68,68,0.20); }
+    .industry-pill.sky   { background: rgba(14,165,233,0.10); color: #0369a1; border: 1px solid rgba(14,165,233,0.20); }
+    .industry-pill.slate { background: rgba(71,85,105,0.10);  color: #334155; border: 1px solid rgba(71,85,105,0.20); }
+    .industry-pill.pink  { background: rgba(236,72,153,0.10); color: #9d174d; border: 1px solid rgba(236,72,153,0.20); }
+
+    /* ── CTA FOOTER ──────────────────────────────────────────── */
+    .cta {
+      background: var(--dark);
+      padding: 4.5mm 8mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6mm;
+    }
+    .cta-left {}
+    .cta-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12pt;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1mm;
+      line-height: 1.2;
+    }
+    .cta-heading span { color: #06B6D4; }
+    .cta-sub {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.55);
+    }
+    .cta-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .cta-contacts { display: flex; flex-direction: column; gap: 1.5mm; align-items: flex-end; }
+    .cta-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5mm;
+      font-size: 7.5pt;
+    }
+    .cta-contact-icon {
+      width: 4mm;
+      height: 4mm;
+      border-radius: 50%;
+      background: rgba(6,182,212,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cta-contact-item strong { color: white; font-weight: 600; font-size: 8pt; }
+    .cta-contact-item span  { color: rgba(255,255,255,0.55); }
+
+    /* ── BOTTOM BAR ──────────────────────────────────────────── */
+    .bottom-bar {
+      background: #060D1A;
+      padding: 2mm 8mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .bottom-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .bottom-tags {
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Print button (screen only) ──────────────────────────── */
+    .print-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+      transition: opacity 0.2s;
+    }
+    .print-btn:hover { opacity: 0.9; }
+    @media print { .print-btn { display: none; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="logo-wrap">
+      <!-- Privya logo mark (P) — darkmode SVG inline, scaled for print -->
+      <svg class="logo-icon" viewBox="0 0 1050 1436" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hg0" x1="549" y1="65" x2="549" y2="1487" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2B45AA"/><stop offset="0.8125" stop-color="#151745"/>
+          </linearGradient>
+          <linearGradient id="hg1" x1="494" y1="397" x2="494" y2="1190" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#83A0F2"/><stop offset="0.533654" stop-color="#1F2B80"/>
+          </linearGradient>
+          <linearGradient id="hg2" x1="117" y1="1201" x2="117" y2="1436" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/>
+          </linearGradient>
+          <linearGradient id="hg3" x1="117" y1="78" x2="117" y2="313" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/>
+          </linearGradient>
+          <linearGradient id="hg4" x1="407" y1="969" x2="322" y2="1123" gradientUnits="userSpaceOnUse">
+            <stop offset="0.225962" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/>
+          </linearGradient>
+          <linearGradient id="hg5" x1="359" y1="418" x2="359" y2="587" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/>
+          </linearGradient>
+        </defs>
+        <path d="M65.2709 737.582V1233.65H156.648V306.782L156.643 234.983L646.157 234.982C646.157 234.982 739.204 229.148 822.376 306.782C900.697 379.887 907.224 463.436 907.224 463.436C907.224 463.436 926.805 567.873 874.59 652.727C822.376 737.582 727.628 774.392 678.787 783.273C606.992 796.327 515.617 763.691 482.983 731.055L417.715 796.327L515.617 842.018C665.732 894.238 770.162 848.547 822.376 822.438C997.552 705.644 1005.04 608.201 1011.53 523.695L1011.65 522.182C1011.65 202.345 750.588 137.073 685.317 137.073H234.969H65.2709C65.2709 137.073 65.2678 228.456 65.2709 306.782V737.582Z" fill="url(#hg0)"/>
+        <path d="M639.625 417.746L417.713 639.673L417.716 561.346H306.758V992.146H417.714V802.855L496.035 718L691.839 522.182C737.526 483.018 735.351 459.084 731 450.382C704.892 391.636 659.204 398.164 639.625 417.746Z" fill="url(#hg1)"/>
+        <path d="M234.964 1318.51C234.964 1383.4 182.366 1436 117.482 1436C52.5986 1436 0 1383.4 0 1318.51C0 1253.62 52.5986 1201.02 117.482 1201.02C182.366 1201.02 234.964 1253.62 234.964 1318.51Z" fill="url(#hg2)"/>
+        <path d="M234.964 195.818C234.964 260.707 182.366 313.309 117.482 313.309C52.5986 313.309 0 260.707 0 195.818C0 130.929 52.5986 78.3274 117.482 78.3274C182.366 78.3274 234.964 130.929 234.964 195.818Z" fill="url(#hg3)"/>
+        <path d="M443.821 1037.84C443.821 1084.7 405.834 1122.69 358.973 1122.69C312.112 1122.69 274.125 1084.7 274.125 1037.84C274.125 990.972 312.112 952.982 358.973 952.982C405.834 952.982 443.821 990.972 443.821 1037.84Z" fill="url(#hg4)"/>
+        <path d="M443.821 502.6C443.821 549.464 405.834 587.454 358.973 587.454C312.112 587.454 274.125 549.464 274.125 502.6C274.125 455.735 312.112 417.745 358.973 417.745C405.834 417.745 443.821 455.735 443.821 502.6Z" fill="url(#hg5)"/>
+      </svg>
+      <div class="logo-text-block">
+        <div class="logo-name">Privya Solution <span>LLP</span></div>
+        <div class="logo-sub">Industrial Technology &amp; Automation</div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="header-tagline">Engineering Technology Solutions</div>
+      <div class="header-contacts">
+        <div class="header-contact">
+          <svg width="7" height="7" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#06B6D4" stroke-width="1.5"/><path d="M8 4v4l2.5 2.5" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <strong>+91-9904095104</strong>
+        </div>
+        <div class="header-contact">
+          <svg width="7" height="7" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#06B6D4" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="#06B6D4" stroke-width="1.5"/></svg>
+          <strong>sales@privyasolution.com</strong>
+        </div>
+        <div class="header-contact">
+          <svg width="7" height="7" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#06B6D4" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>www.privyasolution.com</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gradient divider -->
+  <div class="grad-bar"></div>
+
+  <!-- ── HERO STRIP ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-headline font-heading">
+      Custom Software.&nbsp;&nbsp;<span class="accent">Industrial Automation.</span>&nbsp;&nbsp;<span class="accent2">Business Transformation.</span>
+    </div>
+    <div class="hero-sub">
+      End-to-end technology solutions for Manufacturing, Pharma, Logistics &amp; Enterprise sectors — from hardware integration to cloud intelligence.
+    </div>
+  </section>
+
+  <!-- ── CAPABILITY COLUMNS ──────────────────────────────────── -->
+  <div class="caps-row">
+    <div class="cap-col">
+      <div class="cap-header font-heading">Software Development</div>
+      <div class="cap-desc">CRM, ERP, Web Apps &amp; Custom Enterprise Platforms</div>
+    </div>
+    <div class="cap-col">
+      <div class="cap-header font-heading">Industrial Automation</div>
+      <div class="cap-desc">Pharma Weighing, WMS, MES &amp; Weighbridge Systems</div>
+    </div>
+    <div class="cap-col">
+      <div class="cap-header font-heading">Hardware Integration</div>
+      <div class="cap-desc">Barcode, RFID, IoT, Scales &amp; Industrial Devices</div>
+    </div>
+    <div class="cap-col">
+      <div class="cap-header font-heading">Business Intelligence</div>
+      <div class="cap-desc">Dashboards, Analytics &amp; Real-Time Reporting</div>
+    </div>
+  </div>
+
+  <!-- ── CORE SOLUTIONS ──────────────────────────────────────── -->
+  <div class="section-header">
+    <div class="section-label font-heading">Core Solutions</div>
+    <div class="section-line"></div>
+    <div class="section-badge">6 Flagship Products</div>
+  </div>
+
+  <div class="solutions-grid">
+    <!-- WMS -->
+    <div class="sol-card">
+      <div class="sol-card-inner">
+        <div class="sol-title">Warehouse Management System (WMS)</div>
+        <ul class="sol-list">
+          <li>Inventory Tracking &amp; Control</li>
+          <li>Barcode-Enabled Workflows</li>
+          <li>Putaway &amp; Picking Management</li>
+          <li>Dispatch Management</li>
+          <li>Real-Time Stock Reporting</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Barcode -->
+    <div class="sol-card">
+      <div class="sol-card-inner">
+        <div class="sol-title">Barcode &amp; Traceability System</div>
+        <ul class="sol-list">
+          <li>End-to-End Product Tracking</li>
+          <li>Batch &amp; Genealogy Tracking</li>
+          <li>Quality Compliance Reporting</li>
+          <li>Inventory Traceability</li>
+          <li>Supply Chain Visibility</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Pharma -->
+    <div class="sol-card">
+      <div class="sol-card-inner">
+        <div class="sol-title">Pharma Weighing Solution</div>
+        <ul class="sol-list">
+          <li>Weighing Scale Integration</li>
+          <li>Batch Management &amp; Audit Trails</li>
+          <li>Regulatory Compliance (GMP / 21 CFR)</li>
+          <li>Electronic Batch Records</li>
+          <li>Real-Time Monitoring</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Weighbridge -->
+    <div class="sol-card">
+      <div class="sol-card-inner">
+        <div class="sol-title">Weighbridge Management System</div>
+        <ul class="sol-list">
+          <li>Weight Capture Automation</li>
+          <li>Camera &amp; RFID Integration</li>
+          <li>Vehicle Tracking &amp; Gate Automation</li>
+          <li>Anti-Tampering &amp; Anti-Cheat Features</li>
+          <li>ERP Integration &amp; Report Generation</li>
+        </ul>
+      </div>
+    </div>
+    <!-- MES -->
+    <div class="sol-card">
+      <div class="sol-card-inner">
+        <div class="sol-title">Manufacturing Execution System (MES)</div>
+        <ul class="sol-list">
+          <li>Production &amp; Quality Tracking</li>
+          <li>Machine Utilisation &amp; OEE Analytics</li>
+          <li>Work Order Management</li>
+          <li>Downtime Analysis</li>
+          <li>Compliance Reporting</li>
+        </ul>
+      </div>
+    </div>
+    <!-- IoT -->
+    <div class="sol-card">
+      <div class="sol-card-inner">
+        <div class="sol-title">IoT &amp; Industrial Automation</div>
+        <ul class="sol-list">
+          <li>Real-Time Device Monitoring</li>
+          <li>Predictive Maintenance</li>
+          <li>Cloud &amp; On-Premise Connectivity</li>
+          <li>Alerts &amp; Notifications</li>
+          <li>Data Analytics &amp; Dashboards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHY CHOOSE US ───────────────────────────────────────── -->
+  <div class="why-section">
+    <div style="display:flex;align-items:center;gap:2.5mm;margin-bottom:0;">
+      <div class="section-label font-heading" style="font-size:9pt;">Why Choose Privya Solution LLP</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-text">Industry-Specific Solutions</div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-text">Hardware &amp; Software Under One Roof</div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-text">Scalable &amp; Secure Architecture</div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-text">Real-Time Monitoring &amp; Reporting</div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-text">Cloud &amp; On-Premise Deployments</div>
+      </div>
+      <div class="why-item">
+        <div class="why-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-text">Dedicated Support &amp; Maintenance</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── INDUSTRIES WE SERVE ─────────────────────────────────── -->
+  <div class="industries-section">
+    <div style="display:flex;align-items:center;gap:2.5mm;">
+      <div class="section-label font-heading" style="font-size:9pt;">Industries We Serve</div>
+      <div class="section-line"></div>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-pill blue">Pharmaceuticals</div>
+      <div class="industry-pill cyan">Manufacturing</div>
+      <div class="industry-pill green">Logistics &amp; Warehousing</div>
+      <div class="industry-pill violet">Retail &amp; FMCG</div>
+      <div class="industry-pill red">Healthcare</div>
+      <div class="industry-pill sky">Transportation</div>
+      <div class="industry-pill orange">Distribution</div>
+      <div class="industry-pill slate">Government &amp; Enterprise</div>
+      <div class="industry-pill pink">Service Industries</div>
+    </div>
+  </div>
+
+  <!-- ── CTA FOOTER ──────────────────────────────────────────── -->
+  <section class="cta">
+    <div class="cta-left">
+      <div class="cta-heading font-heading">
+        Ready to Transform <span>Your Business?</span>
+      </div>
+      <div class="cta-sub">
+        Partner with us for innovative software, automation &amp; industrial solutions.<br/>
+        Contact us today for a <strong style="color:white;">FREE consultation.</strong>
+      </div>
+    </div>
+    <div class="cta-right">
+      <div class="cta-contacts">
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">
+            <svg width="8" height="8" viewBox="0 0 16 16" fill="none"><path d="M2 3.5C2 2.67 2.67 2 3.5 2h2.08c.35 0 .66.22.76.55l.92 2.76c.12.35 0 .74-.29.96L5.7 7.3a9 9 0 004 4l1.03-1.27a.8.8 0 01.96-.29l2.76.92c.33.1.55.41.55.76V13.5c0 .83-.67 1.5-1.5 1.5C5.6 15 1 10.4 1 4.5V3.5C1 2.67 1.67 2 2.5 2" stroke="#06B6D4" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <strong>+91-9904095104</strong>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">
+            <svg width="8" height="8" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="#06B6D4" stroke-width="1.2"/><path d="M1 5l7 5 7-5" stroke="#06B6D4" stroke-width="1.2"/></svg>
+          </div>
+          <strong>sales@privyasolution.com</strong>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">
+            <svg width="8" height="8" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#06B6D4" stroke-width="1.2"/><path d="M8 3c-2 2-2 8 0 10M8 3c2 2 2 8 0 10M2 8h12M3 5.5h10M3 10.5h10" stroke="#06B6D4" stroke-width="1"/></svg>
+          </div>
+          <span>www.privyasolution.com</span>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon">
+            <svg width="8" height="8" viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.51 1.5 3.5 3.51 3.5 6c0 3.75 4.5 8.5 4.5 8.5s4.5-4.75 4.5-8.5c0-2.49-2.01-4.5-4.5-4.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="#06B6D4" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Surat, Gujarat, India</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOTTOM BAR ──────────────────────────────────────────── -->
+  <div class="bottom-bar">
+    <div class="bottom-name">Privya Solution LLP &nbsp;|&nbsp; Surat, Gujarat, India</div>
+    <div class="bottom-tags">Custom Software &nbsp;•&nbsp; Industrial Automation &nbsp;•&nbsp; Hardware Integration &nbsp;•&nbsp; IoT &nbsp;•&nbsp; Cloud Services</div>
+  </div>
+
+</div><!-- .page -->
+
+<!-- Print button (visible on screen only) -->
+<button class="print-btn no-print" onclick="window.print()">
+  🖨️ &nbsp;Print / Save as PDF
+</button>
+
+</body>
+</html>
