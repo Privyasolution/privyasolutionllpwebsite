@@ -16,7 +16,7 @@ const Barcode: React.FC = () => (
       'Instant product recall capability with complete batch lineage',
       'Counterfeit prevention through unique serialization',
       'GS1 standard compliance for pharma, food, and retail sectors',
-      'Integration with WMS, ERP, and manufacturing systems',
+      'Integration with WMS, enterprise systems, and manufacturing platforms',
       'Expiry management with automated alerts and FEFO enforcement',
       'Supplier and customer-side traceability with portal access',
       'Audit-ready reporting for regulatory compliance',
@@ -44,7 +44,7 @@ const Barcode: React.FC = () => (
       'Barcode (Code128, EAN, Code39)', 'QR Code', 'DataMatrix', 'PDF417',
       'RFID (UHF/HF)', 'GS1 Standards', 'ZPL Label Printing',
       'Zebra Printers', 'Honeywell Scanners', 'Android App', 'iOS App',
-      'REST API', 'ERP Integration', 'SQL Server', 'Cloud/On-Premise',
+      'REST API', 'Enterprise System Integration', 'PostgreSQL', 'Cloud/On-Premise',
     ]}
     workflow={[
       { step: 1, title: 'Item Registration', description: 'Define product master with batch/serial attributes. Generate and print barcode/QR labels at production or receiving.' },

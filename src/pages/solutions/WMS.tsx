@@ -16,7 +16,7 @@ const WMS: React.FC = () => (
       'Up to 40% reduction in picking errors through guided workflows',
       'Automated stock replenishment and reorder alerts',
       'Complete audit trail for every movement with barcode/RFID tracking',
-      'Integration with ERP systems including SAP, Tally, and custom systems',
+      'Integration with enterprise systems including SAP, Tally, and custom platforms',
       'Mobile-ready interfaces for handheld scanners and tablets',
       'Advanced reporting: stock aging, ABC analysis, space utilization',
       'Multi-unit handling: lot, batch, serial, and expiry tracking',
@@ -26,7 +26,7 @@ const WMS: React.FC = () => (
       { title: 'Inventory Control', description: 'Real-time stock levels, multi-location tracking, lot/batch/serial control, and expiry date management.', icon: '📦' },
       { title: 'Order Fulfillment', description: 'Wave picking, zone picking, cluster picking, and smart pick path optimization for maximum efficiency.', icon: '✅' },
       { title: 'Barcode & RFID', description: 'Native support for barcode scanners, RFID readers, and mobile devices — any hardware, any brand.', icon: '📊' },
-      { title: 'ERP Integration', description: 'Pre-built connectors for SAP, Tally, Oracle, and any custom ERP through REST API or direct DB integration.', icon: '🔗' },
+      { title: 'Enterprise System Integration', description: 'Pre-built connectors for SAP, Tally, Oracle, and any enterprise system through REST API or direct DB integration.', icon: '🔗' },
       { title: 'Analytics Dashboard', description: 'Real-time KPI dashboards: fill rate, cycle time, accuracy, space utilization, and labor productivity.', icon: '📈' },
       { title: 'Multi-Warehouse', description: 'Manage multiple warehouses, zones, racks, and bin locations from a single unified platform.', icon: '🏭' },
       { title: 'Returns Management', description: 'Streamlined reverse logistics with damage assessment, restocking, and vendor return workflows.', icon: '🔄' },
@@ -42,7 +42,7 @@ const WMS: React.FC = () => (
     ]}
     technologies={[
       'Barcode Scanning', 'RFID Integration', 'Mobile Handheld Devices',
-      'SAP Integration', 'Tally Integration', 'REST API', 'SQL Server',
+      'SAP Integration', 'Tally Integration', 'REST API', 'PostgreSQL',
       'Cloud Hosting', 'On-Premise', 'Android / iOS Apps', 'Web Dashboard',
       'Label Printing', 'Thermal Printers', 'EDI', 'Excel Import/Export',
     ]}
@@ -50,8 +50,8 @@ const WMS: React.FC = () => (
       { step: 1, title: 'Goods Receipt', description: 'Items arrive at receiving dock — scan supplier barcode or PO, system validates quantities and raises discrepancy alerts automatically.' },
       { step: 2, title: 'Quality Check & Putaway', description: 'QC inspection is logged, and system suggests optimal bin location based on ABC classification, weight, and available space.' },
       { step: 3, title: 'Inventory Management', description: 'Real-time stock ledger with full lot, batch, serial, and expiry tracking. Cycle count management for perpetual accuracy.' },
-      { step: 4, title: 'Order Processing', description: 'Sales order downloaded from ERP. System creates pick wave, assigns to picker with optimized route on handheld device.' },
-      { step: 5, title: 'Picking & Packing', description: 'Guided pick with barcode confirmation at every step. Packing station generates shipping label and updates ERP automatically.' },
+      { step: 4, title: 'Order Processing', description: 'Sales order downloaded from enterprise system. System creates pick wave, assigns to picker with optimized route on handheld device.' },
+      { step: 5, title: 'Picking & Packing', description: 'Guided pick with barcode confirmation at every step. Packing station generates shipping label and updates enterprise system automatically.' },
       { step: 6, title: 'Dispatch & Analytics', description: 'Dispatch records created, POD captured, and KPI dashboards updated in real-time for management visibility.' },
     ]}
   />

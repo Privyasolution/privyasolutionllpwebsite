@@ -131,6 +131,15 @@
     @apply max-w-7xl mx-auto;
   }
 
+  /* Aliases used in service-detail components */
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .section-tag {
+    @apply text-xs font-semibold uppercase tracking-widest mb-2;
+  }
+
   .card-enterprise {
     background: rgba(11, 18, 32, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.07);
@@ -231,6 +240,20 @@
 .animate-dash {
   stroke-dasharray: 10 5;
   animation: dash 20s linear infinite;
+}
+
+/* ── Clients marquee ─────────────────────────────────────────── */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-scroll var(--marquee-duration, 25s) linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 .perspective-1000 {

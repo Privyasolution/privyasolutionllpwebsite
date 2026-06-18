@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { Toaster } from 'react-hot-toast'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { useLenis } from '@/hooks/useLenis'
@@ -17,74 +17,43 @@ const PharmaWeighing = lazy(() => import('@/pages/solutions/PharmaWeighing'))
 const Weighbridge = lazy(() => import('@/pages/solutions/Weighbridge'))
 const MES = lazy(() => import('@/pages/solutions/MES'))
 const IoT = lazy(() => import('@/pages/solutions/IoT'))
-const CustomSoftware = lazy(() => import('@/pages/solutions/CustomSoftware'))
-const WebDevelopment = lazy(() => import('@/pages/solutions/WebDevelopment'))
+// Need management confirmation before permanent removal
+// const CustomSoftware = lazy(() => import('@/pages/solutions/CustomSoftware'))
+// const WebDevelopment = lazy(() => import('@/pages/solutions/WebDevelopment'))
 const AMC = lazy(() => import('@/pages/solutions/AMC'))
+const IPQCVerification = lazy(() => import('@/pages/projects/IPQCVerification'))
+const AutoWeightCapture = lazy(() => import('@/pages/projects/AutoWeightCapture'))
+const SmartParcelVerification = lazy(() => import('@/pages/projects/SmartParcelVerification'))
+const VehicleWeighbridge = lazy(() => import('@/pages/projects/VehicleWeighbridge'))
+const NotFound = lazy(() => import('@/pages/NotFound'))
 
+// Pure-CSS loader — no framer-motion, paint-ready in one frame
 const PageLoader: React.FC = () => (
-  <div className="fixed inset-0 flex items-center justify-center z-50" style={{ background: '#020617' }}>
-    {/* Ambient radial glow */}
-    <div
-      className="absolute inset-0 pointer-events-none"
-      style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(37,99,235,0.12), transparent)' }}
-    />
-
-    <div className="relative flex flex-col items-center gap-8">
-      {/* Favicon icon with orbital rings */}
-      <div className="relative flex items-center justify-center w-36 h-36">
-        {/* Outer orbit ring */}
-        <motion.div
-          className="absolute inset-0 rounded-full"
-          style={{ border: '1px solid rgba(37,99,235,0.25)' }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
-        />
-        {/* Inner orbit ring */}
-        <motion.div
-          className="absolute w-24 h-24 rounded-full"
-          style={{ border: '1px solid rgba(6,182,212,0.30)' }}
-          animate={{ rotate: -360 }}
-          transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
-        />
-        {/* Glow halo */}
-        <motion.div
-          className="absolute w-16 h-16 rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.35), transparent 70%)' }}
-          animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        {/* Actual favicon — breathe + gentle rock */}
-        <motion.img
-          src="/favicon-darkmode.svg"
-          alt="Privya Solution LLP"
-          className="relative z-10 w-14 h-14 object-contain"
-          animate={{
-            scale: [1, 1.08, 1, 1.04, 1],
-            rotate: [0, 3, 0, -3, 0],
-          }}
-          transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      </div>
-
-      {/* Brand name */}
-      <div className="text-center">
-        <div
-          className="font-bold text-xl tracking-tight text-white"
-          style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
-        >
-          Privya Solution <span style={{ color: '#06B6D4' }}>LLP</span>
-        </div>
-        <div className="flex items-center justify-center gap-1.5 mt-3">
-          {[0, 0.22, 0.44].map((delay) => (
-            <motion.div
-              key={delay}
-              className="w-1.5 h-1.5 rounded-full"
-              style={{ background: '#06B6D4' }}
-              animate={{ scale: [0.5, 1.4, 0.5], opacity: [0.2, 1, 0.2] }}
-              transition={{ duration: 1.3, delay, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          ))}
-        </div>
+  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8" style={{ background: '#020617' }}>
+    <div className="relative w-32 h-32 flex items-center justify-center">
+      <div
+        className="absolute inset-0 rounded-full animate-pulse-slow"
+        style={{ border: '1px solid rgba(6,182,212,0.22)' }}
+      />
+      <div
+        className="absolute inset-4 rounded-full"
+        style={{ border: '1px solid rgba(37,99,235,0.28)' }}
+      />
+      <img src="/favicon-darkmode.svg" alt="" className="relative z-10 w-14 h-14 select-none" draggable={false} />
+    </div>
+    <div className="flex flex-col items-center gap-3">
+      <p className="text-base font-bold tracking-tight">
+        <span className="text-white">Privya Solution </span>
+        <span style={{ color: '#06B6D4' }}>LLP</span>
+      </p>
+      <div className="flex items-center gap-1.5">
+        {([0, 150, 300] as const).map((ms) => (
+          <span
+            key={ms}
+            className="block w-1.5 h-1.5 rounded-full animate-pulse"
+            style={{ background: '#06B6D4', animationDelay: `${ms}ms` }}
+          />
+        ))}
       </div>
     </div>
   </div>
@@ -116,12 +85,18 @@ const AppContent: React.FC = () => {
           <Route path="/solutions/weighbridge" element={<Weighbridge />} />
           <Route path="/solutions/mes" element={<MES />} />
           <Route path="/solutions/iot" element={<IoT />} />
-          <Route path="/solutions/custom-software" element={<CustomSoftware />} />
-          <Route path="/solutions/web-development" element={<WebDevelopment />} />
+          {/* Need management confirmation before permanent removal */}
+          {/* <Route path="/solutions/custom-software" element={<CustomSoftware />} /> */}
+          {/* <Route path="/solutions/web-development" element={<WebDevelopment />} /> */}
           <Route path="/solutions/amc" element={<AMC />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/ipqc-verification" element={<IPQCVerification />} />
+          <Route path="/projects/auto-weight-capture" element={<AutoWeightCapture />} />
+          <Route path="/projects/smart-parcel-verification" element={<SmartParcelVerification />} />
+          <Route path="/projects/vehicle-weighbridge" element={<VehicleWeighbridge />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
       <Footer />
@@ -133,6 +108,20 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <AppContent />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: '#0B1220',
+            color: '#e2e8f0',
+            border: '1px solid rgba(255,255,255,0.08)',
+            borderRadius: '12px',
+            fontSize: '14px',
+          },
+          success: { iconTheme: { primary: '#22c55e', secondary: '#0B1220' } },
+          error: { iconTheme: { primary: '#ef4444', secondary: '#0B1220' } },
+        }}
+      />
     </BrowserRouter>
   )
 }

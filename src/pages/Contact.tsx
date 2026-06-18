@@ -1,6 +1,10 @@
-﻿import React, { useState } from 'react'
+﻿import React from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import toast from 'react-hot-toast'
 import { viewportConfig } from '@/utils/animations'
 import { PageSEO } from '@/components/ui/PageSEO'
 
@@ -11,25 +15,75 @@ const services = [
   'Weighbridge Management',
   'Manufacturing Execution System',
   'IoT & Industrial Automation',
-  'Custom Software Development',
-  'Web Application Development',
   'Annual Maintenance & Support',
+  'Customization & Integration',
   'Other / General Inquiry',
 ]
 
+const schema = z.object({
+  fullName: z.string().min(2, 'Name must be at least 2 characters.').max(100),
+  company: z.string().optional(),
+  email: z.string().email('Please enter a valid email address.'),
+  mobile: z.string().optional().refine(
+    (val) => !val || /^[+\d\s\-().]{7,20}$/.test(val),
+    { message: 'Invalid phone number format.' }
+  ),
+  service: z.string().optional(),
+  message: z.string().min(10, 'Message must be at least 10 characters.').max(2000, 'Message is too long.'),
+  website: z.string().optional(),
+})
+
+type FormValues = z.infer<typeof schema>
+
+const inputClass =
+  'w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-text-muted text-sm focus:outline-none focus:border-accent/50 transition-colors'
+const errorClass = 'mt-1.5 text-xs text-red-400'
+
 const Contact: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false)
-  const [form, setForm] = useState({
-    name: '', company: '', email: '', phone: '', service: '', message: ''
+  const [submitted, setSubmitted] = React.useState(false)
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      fullName: '',
+      company: '',
+      email: '',
+      mobile: '',
+      service: '',
+      message: '',
+      website: '',
+    },
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+      const json = await res.json()
+
+      if (!res.ok || !json.success) {
+        const msg =
+          json.errors?.map((e: { message: string }) => e.message).join(' ') ||
+          json.message ||
+          'Something went wrong. Please try again.'
+        toast.error(msg, { duration: 5000 })
+        return
+      }
+
+      setSubmitted(true)
+      toast.success('Message sent! We will get back to you within 3-4 business days.', { duration: 6000 })
+    } catch {
+      toast.error('Network error. Please check your connection and try again.', { duration: 5000 })
+    }
   }
 
   return (
@@ -39,6 +93,7 @@ const Contact: React.FC = () => {
         description="Contact Privya Solution LLP for industrial software, automation, WMS, MES, pharma weighing, and weighbridge solutions. Surat, Gujarat, India."
         canonical="/contact"
       />
+
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
         <div className="absolute inset-0 grid-bg opacity-20" />
@@ -95,10 +150,9 @@ const Contact: React.FC = () => {
                 </h2>
                 <p className="text-text-muted leading-relaxed mb-8">
                   Whether you need a complete warehouse management system, pharma compliance solution,
-                  or custom industrial software - our experts are ready to help.
+                  or custom industrial software — our experts are ready to help.
                 </p>
 
-                {/* Contact cards */}
                 <div className="space-y-4">
                   <div className="card-enterprise p-5 flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
@@ -119,10 +173,10 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-xs text-text-muted mb-1">Email Us</div>
-                      <a href="mailto:privyasolution@gmail.com" className="text-white font-semibold hover:text-accent transition-colors">
-                        privyasolution@gmail.com
+                      <a href="mailto:sales@privyasolution.com" className="text-white font-semibold hover:text-accent transition-colors">
+                        sales@privyasolution.com
                       </a>
-                      <div className="text-xs text-text-muted mt-1">Respond to all inquiries as soon as possible</div>
+                      <div className="text-xs text-text-muted mt-1">We respond to all inquiries as soon as possible</div>
                     </div>
                   </div>
 
@@ -132,8 +186,11 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <div className="text-xs text-text-muted mb-1">Visit Us</div>
-                      <div className="text-white font-semibold text-sm leading-snug">523, Universal Trade Center, Opp. Mahendra Showroom, Near Hari Om Circle, L.P. Savani Rd, Surat, Gujarat</div>
-                      <div className="text-xs text-text-muted mt-1">On-site visits available PAN India</div>
+                      <div className="text-white font-semibold text-sm leading-snug">
+                        523, Universal Trade Center, Opp. Mahendra Showroom,
+                        Near Hari Om Circle, L.P. Savani Rd, Surat, Gujarat
+                      </div>
+                      <div className="text-xs text-text-muted mt-1">On-site visits available across India</div>
                     </div>
                   </div>
 
@@ -168,13 +225,13 @@ const Contact: React.FC = () => {
                     <div className="w-20 h-20 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-10 h-10 text-green-400" />
                     </div>
-                    <h3 className="text-white font-bold text-2xl mb-4">Message Received!</h3>
+                    <h3 className="text-white font-bold text-2xl mb-4">Message Sent!</h3>
                     <p className="text-text-muted">
-                      Thank you for reaching out. Our team will contact you within 4 business hours
-                      to discuss your requirements.
+                      Thank you for reaching out. Our team will contact you within 3-4 business days
+                      to discuss your requirements. Please check your inbox for a confirmation email.
                     </p>
                     <button
-                      onClick={() => setSubmitted(false)}
+                      onClick={() => { setSubmitted(false); reset() }}
                       className="mt-8 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-sm text-white hover:bg-white/10 transition-all"
                     >
                       Send Another Message
@@ -183,27 +240,41 @@ const Contact: React.FC = () => {
                 ) : (
                   <>
                     <h3 className="text-white font-bold text-2xl mb-2">Request Free Consultation</h3>
-                    <p className="text-text-muted text-sm mb-8">Fill in your details and we'll get back within 4 hours.</p>
+                    <p className="text-text-muted text-sm mb-8">Fill in your details and we'll get back within 3-4 business days.</p>
 
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+                      {/* Honeypot — CSS-only hidden, no aria-hidden, bots fill it, humans don't */}
+                      <div style={{ position: 'absolute', left: '-9999px', top: 0, width: '1px', height: '1px', overflow: 'hidden' }}>
+                        <input
+                          type="text"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          {...register('website')}
+                        />
+                      </div>
+
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-xs text-text-muted mb-2">Full Name *</label>
                           <input
-                            type="text" name="name" required
-                            value={form.name} onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-text-muted text-sm focus:outline-none focus:border-accent/50 transition-colors"
+                            type="text"
+                            autoComplete="name"
                             placeholder="Your full name"
+                            className={inputClass}
+                            {...register('fullName')}
                           />
+                          {errors.fullName && <p className={errorClass}>{errors.fullName.message}</p>}
                         </div>
                         <div>
-                          <label className="block text-xs text-text-muted mb-2">Company Name *</label>
+                          <label className="block text-xs text-text-muted mb-2">Company Name</label>
                           <input
-                            type="text" name="company" required
-                            value={form.company} onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-text-muted text-sm focus:outline-none focus:border-accent/50 transition-colors"
+                            type="text"
+                            autoComplete="organization"
                             placeholder="Your company name"
+                            className={inputClass}
+                            {...register('company')}
                           />
+                          {errors.company && <p className={errorClass}>{errors.company.message}</p>}
                         </div>
                       </div>
 
@@ -211,29 +282,32 @@ const Contact: React.FC = () => {
                         <div>
                           <label className="block text-xs text-text-muted mb-2">Email Address *</label>
                           <input
-                            type="email" name="email" required
-                            value={form.email} onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-text-muted text-sm focus:outline-none focus:border-accent/50 transition-colors"
+                            type="email"
+                            autoComplete="email"
                             placeholder="your@email.com"
+                            className={inputClass}
+                            {...register('email')}
                           />
+                          {errors.email && <p className={errorClass}>{errors.email.message}</p>}
                         </div>
                         <div>
                           <label className="block text-xs text-text-muted mb-2">Phone Number</label>
                           <input
-                            type="tel" name="phone"
-                            value={form.phone} onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-text-muted text-sm focus:outline-none focus:border-accent/50 transition-colors"
+                            type="tel"
+                            autoComplete="tel"
                             placeholder="+91 XXXXX XXXXX"
+                            className={inputClass}
+                            {...register('mobile')}
                           />
+                          {errors.mobile && <p className={errorClass}>{errors.mobile.message}</p>}
                         </div>
                       </div>
 
                       <div>
                         <label className="block text-xs text-text-muted mb-2">Solution of Interest</label>
                         <select
-                          name="service"
-                          value={form.service} onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-accent/50 transition-colors appearance-none"
+                          className={`${inputClass} appearance-none`}
+                          {...register('service')}
                         >
                           <option value="" className="bg-surface">Select a solution...</option>
                           {services.map((s) => (
@@ -245,19 +319,33 @@ const Contact: React.FC = () => {
                       <div>
                         <label className="block text-xs text-text-muted mb-2">Project Details *</label>
                         <textarea
-                          name="message" required rows={5}
-                          value={form.message} onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-text-muted text-sm focus:outline-none focus:border-accent/50 transition-colors resize-none"
+                          rows={5}
                           placeholder="Tell us about your business, challenges, and what you're looking to achieve..."
+                          className={`${inputClass} resize-none`}
+                          {...register('message')}
                         />
+                        {errors.message && <p className={errorClass}>{errors.message.message}</p>}
                       </div>
 
                       <button
                         type="submit"
-                        className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-secondary to-accent text-white font-semibold hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 group"
+                        disabled={isSubmitting}
+                        className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-secondary to-accent text-white font-semibold hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-0.5 group disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                       >
-                        Send Message
-                        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                            </svg>
+                            Sending…
+                          </>
+                        ) : (
+                          <>
+                            Send Message
+                            <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </>
+                        )}
                       </button>
 
                       <p className="text-center text-xs text-text-muted">
@@ -272,7 +360,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* Location */}
       <section className="h-64 bg-surface relative overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 grid-bg opacity-20" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -288,4 +376,3 @@ const Contact: React.FC = () => {
 }
 
 export default Contact
-

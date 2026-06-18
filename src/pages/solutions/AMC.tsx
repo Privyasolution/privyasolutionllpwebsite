@@ -42,7 +42,7 @@ const AMC: React.FC = () => (
     ]}
     technologies={[
       'Remote Desktop Support', 'TeamViewer / AnyDesk', 'Ticket Management',
-      'Database Monitoring', 'SQL Server DBA', 'Windows Server',
+      'Database Monitoring', 'PostgreSQL DBA', 'Windows Server',
       'Network Monitoring', 'Backup Automation', 'Log Analysis',
       'Performance Profiling', 'Security Scanning', 'API Health Checks',
       'Automated Testing', 'CI/CD Pipelines', 'Azure Monitor', 'Cloud Alerts',

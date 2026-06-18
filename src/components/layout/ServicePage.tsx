@@ -160,20 +160,20 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               className="relative"
             >
               <div className={`card-enterprise p-10 text-center`}
-                style={{ boxShadow: `0 0 80px ${glow.replace('0.3', '0.15')}` }}>
-                <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-6`}>
-                  <Icon className="w-12 h-12 text-white" />
+                  style={{ boxShadow: `0 0 80px ${glow.replace('0.3', '0.15')}` }}>
+                  <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-6`}>
+                    <Icon className="w-12 h-12 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-2xl mb-4">{title}</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {['Fully Customizable', 'Cloud Ready', 'Hardware Integration', 'Real-time Data'].map((feat) => (
+                      <div key={feat} className="flex items-center gap-2 text-sm text-text-muted">
+                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${gradient}`} />
+                        {feat}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-white font-bold text-2xl mb-4">{title}</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {['Fully Customizable', 'Cloud Ready', 'Hardware Integration', 'Real-time Data'].map((feat) => (
-                    <div key={feat} className="flex items-center gap-2 text-sm text-text-muted">
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${gradient}`} />
-                      {feat}
-                    </div>
-                  ))}
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>

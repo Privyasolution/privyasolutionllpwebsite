@@ -86,7 +86,7 @@ const HeroBackground: React.FC = () => (
     {([
       { pos: 'top-[18%] left-[5%]',  label: 'WMS Active',     value: '99.8%', color: '#06B6D4', delay: 1.6 },
       { pos: 'top-[12%] right-[6%]', label: 'Automation',     value: 'LIVE',  color: '#2563EB', delay: 2.0 },
-      { pos: 'bottom-[30%] right-[5%]', label: 'MES Uptime',  value: '24/7',  color: '#10B981', delay: 2.4 },
+      { pos: 'bottom-[30%] right-[5%]', label: 'MES Uptime',  value: '99.7%', color: '#10B981', delay: 2.4 },
       { pos: 'bottom-[35%] left-[4%]',  label: 'Integrations',value: '50+',   color: '#8B5CF6', delay: 2.8 },
     ] as const).map((card, i) => (
       <motion.div

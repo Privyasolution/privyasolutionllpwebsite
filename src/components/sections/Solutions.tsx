@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Package, ScanLine, FlaskConical, Scale, Factory, Cpu, Code, Globe, Shield, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, Package, ScanLine, FlaskConical, Scale, Factory, Cpu, Code, Shield, CheckCircle2 } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { viewportConfig } from '@/utils/animations'
 
@@ -51,7 +51,7 @@ const solutions = [
     title: 'Weighbridge Management System',
     subtitle: 'Automated vehicle weighing',
     description: 'Intelligent weighbridge management with automated vehicle detection, RFID integration, and comprehensive reporting for logistics operations.',
-    features: ['RFID Vehicle Detection', 'Automated Capture', 'Anti-Cheat Features', 'ERP Integration'],
+    features: ['RFID Vehicle Detection', 'Automated Capture', 'Anti-Cheat Features', 'Enterprise System Integration'],
     href: '/solutions/weighbridge',
     gradient: 'from-orange-600 to-amber-500',
     headerBg: 'linear-gradient(135deg, #ea580c, #d97706)',
@@ -87,27 +87,14 @@ const solutions = [
   {
     id: 'custom',
     icon: Code,
-    title: 'Custom Software Development',
-    subtitle: 'Tailored enterprise solutions',
-    description: 'Bespoke software development for complex business workflows, hardware integrations, and specialized industrial applications.',
-    features: ['Business Analysis', 'Agile Development', 'Hardware Integration', 'Legacy Modernization'],
+    title: 'Custom Enterprise Solutions',
+    subtitle: 'Tailored industrial software',
+    description: 'Bespoke software development for complex industrial workflows, hardware integrations, and specialized enterprise applications — built to your exact operational requirements.',
+    features: ['Business Process Analysis', 'Industrial Workflow Design', 'Hardware Integration', 'Legacy Modernization'],
     href: '/solutions/custom-software',
     gradient: 'from-rose-600 to-pink-500',
     headerBg: 'linear-gradient(135deg, #e11d48, #db2777)',
     glow: '#F43F5E',
-    category: 'Development',
-  },
-  {
-    id: 'web',
-    icon: Globe,
-    title: 'Web Application Development',
-    subtitle: 'Modern enterprise web apps',
-    description: 'Scalable, responsive web applications built with modern frameworks for enterprise portals, dashboards, and customer-facing platforms.',
-    features: ['React / Angular / Vue', 'Progressive Web Apps', 'API Integration', 'Cloud Deployment'],
-    href: '/solutions/web-development',
-    gradient: 'from-fuchsia-600 to-purple-500',
-    headerBg: 'linear-gradient(135deg, #a21caf, #7c3aed)',
-    glow: '#A855F7',
     category: 'Development',
   },
   {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Target, Eye, Award, Users, Lightbulb, TrendingUp, Shield, Star, MapPin, Phone, Mail, Building2, Linkedin } from 'lucide-react'
+import { Target, Eye, Award, Users, Lightbulb, TrendingUp, Shield, Star, MapPin, Phone, Mail, Building2, Linkedin, CheckCircle2, Cpu, FlaskConical, Scale, Package, Factory, Wifi, Layers, ScanLine } from 'lucide-react'
 import { viewportConfig } from '@/utils/animations'
 import { CTA } from '@/components/sections/CTA'
 import { PageSEO } from '@/components/ui/PageSEO'
@@ -12,17 +12,6 @@ const values = [
   { icon: Users,     title: 'Commitment',            description: 'Staying fully invested in your project from discovery to deployment and beyond, ensuring long-term success.',                   gradient: 'from-green-500 to-emerald-500' },
   { icon: Star,      title: 'Customer Success',      description: "Measuring our success by our clients' outcomes — every solution is built to deliver measurable business value.",             gradient: 'from-pink-500 to-rose-500' },
   { icon: TrendingUp, title: 'Continuous Improvement', description: 'Constantly enhancing our methodologies, tools, and skills to stay at the forefront of industrial technology.',             gradient: 'from-cyan-500 to-teal-500' },
-]
-
-const milestones = [
-  { year: '2014', event: 'Company Founded',             detail: 'Privya Solution LLP established in Surat, Gujarat with a focus on industrial software.' },
-  { year: '2016', event: 'First WMS Deployment',        detail: 'Successfully deployed our first Warehouse Management System for a leading Surat manufacturer.' },
-  { year: '2018', event: 'Pharma Division Launch',      detail: 'Launched dedicated pharmaceutical weighing and compliance solutions for the pharma sector.' },
-  { year: '2019', event: 'IoT Integration',             detail: 'Integrated IoT capabilities, connecting machines and sensors to cloud-based monitoring platforms.' },
-  { year: '2021', event: '100+ Projects Milestone',     detail: 'Crossed 100 successful project deliveries across manufacturing, pharma, and logistics sectors.' },
-  { year: '2023', event: 'Pan-India Expansion',         detail: 'Expanded operations to serve clients across 8+ states in India.' },
-  { year: '2024', event: 'MES Platform Launch',         detail: 'Released next-generation Manufacturing Execution System with real-time OEE analytics.' },
-  { year: '2025', event: '150+ Projects & Beyond',      detail: 'Serving 150+ clients with comprehensive industrial technology and automation solutions.' },
 ]
 
 const teamLeaders = [
@@ -140,8 +129,8 @@ const About: React.FC = () => {
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
             className="text-text-muted text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto px-2">
-            A decade of experience delivering software, automation, and industrial solutions
-            to manufacturing, pharmaceutical, and logistics organizations across India.
+            Delivering purpose-built software, automation, and industrial technology solutions
+            to manufacturing, pharmaceutical, warehousing, and logistics organizations across India.
           </motion.p>
         </div>
       </section>
@@ -264,39 +253,150 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Company Timeline */}
+      {/* Why Choose Us */}
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="container-xl relative">
+          <div className="text-center mb-14">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewportConfig}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              Why Choose Us
+            </motion.div>
+            <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewportConfig}
+              transition={{ delay: 0.1 }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+              What Sets Us <span className="gradient-text-blue">Apart</span>
+            </motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewportConfig}
+              transition={{ delay: 0.2 }} className="text-text-muted text-base sm:text-lg max-w-2xl mx-auto mt-4">
+              We combine deep industrial domain expertise with modern technology to deliver solutions that actually work on the shop floor.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: Award, title: 'Proven Track Record', desc: '150+ successful deployments across manufacturing, pharma, warehousing, and logistics sectors with measurable outcomes.', gradient: 'from-blue-500 to-cyan-500' },
+              { icon: Cpu, title: 'Hardware-to-Cloud Expertise', desc: 'From weighing scale integrations and RFID readers to cloud dashboards — we handle the full technology stack.', gradient: 'from-violet-500 to-purple-500' },
+              { icon: Layers, title: 'End-to-End Delivery', desc: 'Discovery, design, development, hardware setup, training, and AMC support — one partner for the entire project lifecycle.', gradient: 'from-green-500 to-emerald-500' },
+              { icon: Shield, title: 'Compliance-Ready Solutions', desc: 'GMP, 21 CFR Part 11, and audit-trail requirements are built into our pharmaceutical and industrial solutions by design.', gradient: 'from-orange-500 to-amber-500' },
+            ].map((item, i) => {
+              const Icon = item.icon
+              return (
+                <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={viewportConfig} transition={{ delay: i * 0.1 }} className="card-enterprise p-6 group">
+                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
+                  <p className="text-text-muted text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Expertise */}
+      <section className="section-padding bg-surface relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-10" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="container-xl relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={viewportConfig}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-medium mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+                Industry Expertise
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">
+                Deep Domain Knowledge <br /><span className="gradient-text-blue">Across Industries</span>
+              </h2>
+              <p className="text-text-muted text-base leading-relaxed mb-8">
+                Our solutions are purpose-built for the operational realities of each industry — not generic software adapted as an afterthought.
+                We understand the compliance requirements, hardware environments, and workflow challenges that matter most to your sector.
+              </p>
+              <div className="space-y-3">
+                {[
+                  'GMP & 21 CFR Part 11 for pharmaceutical manufacturing',
+                  'RFID vehicle tracking for steel, mining, and logistics',
+                  'Electronic batch records for process industries',
+                  'Multi-client inventory for 3PL and distribution',
+                  'OEE and machine connectivity for discrete manufacturing',
+                  'Weighing device integration across all industrial segments',
+                ].map((point, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+                    viewport={viewportConfig} transition={{ delay: i * 0.06 }}
+                    className="flex items-start gap-3 text-text-muted text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    {point}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: FlaskConical, label: 'Pharmaceutical',     color: '#8B5CF6', bg: 'rgba(139,92,246,0.12)',  border: 'rgba(139,92,246,0.25)', detail: 'GMP Weighing · MES · eBMR' },
+                { icon: Factory,      label: 'Manufacturing',      color: '#10B981', bg: 'rgba(16,185,129,0.12)', border: 'rgba(16,185,129,0.25)', detail: 'WMS · MES · OEE Tracking' },
+                { icon: Package,      label: 'Warehousing & 3PL',  color: '#2563EB', bg: 'rgba(37,99,235,0.12)',  border: 'rgba(37,99,235,0.25)',  detail: 'Multi-Site WMS · RFID' },
+                { icon: Scale,        label: 'Steel & Mining',      color: '#F59E0B', bg: 'rgba(245,158,11,0.12)', border: 'rgba(245,158,11,0.25)', detail: 'Weighbridge · Anti-Fraud' },
+                { icon: Wifi,         label: 'IoT & Automation',   color: '#06B6D4', bg: 'rgba(6,182,212,0.12)',  border: 'rgba(6,182,212,0.25)',  detail: 'Sensors · SCADA · MQTT' },
+                { icon: ScanLine,     label: 'Food & Logistics',   color: '#EC4899', bg: 'rgba(236,72,153,0.12)', border: 'rgba(236,72,153,0.25)', detail: 'Traceability · GS1 · FEFO' },
+              ].map((ind, i) => {
+                const Icon = ind.icon
+                return (
+                  <motion.div key={ind.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                    viewport={viewportConfig} transition={{ delay: i * 0.07 }}
+                    className="p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
+                    style={{ background: ind.bg, borderColor: ind.border }}>
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3"
+                      style={{ background: `${ind.color}25`, border: `1px solid ${ind.color}40` }}>
+                      <Icon className="w-4.5 h-4.5" style={{ color: ind.color }} />
+                    </div>
+                    <div className="text-white font-semibold text-sm mb-1">{ind.label}</div>
+                    <div className="text-text-muted text-xs leading-snug">{ind.detail}</div>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Capabilities */}
       <section className="section-padding bg-background relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-10" />
         <div className="container-xl relative">
           <div className="text-center mb-14">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewportConfig}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-medium mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-              Company Journey
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              Core Capabilities
             </motion.div>
             <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewportConfig}
               transition={{ delay: 0.1 }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-              A Decade of <span className="gradient-text-blue">Growth &amp; Innovation</span>
+              What We <span className="gradient-text-blue">Build & Deliver</span>
             </motion.h2>
           </div>
-
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-secondary/30 to-transparent hidden md:block" />
-            {milestones.map((milestone, i) => (
-              <motion.div key={milestone.year} initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }} viewport={viewportConfig} transition={{ delay: i * 0.08 }}
-                className={`flex items-center gap-6 sm:gap-8 mb-8 sm:mb-10 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                  <div className="card-enterprise p-5 sm:p-6 inline-block w-full">
-                    <div className="text-accent text-sm font-semibold mb-1">{milestone.year}</div>
-                    <div className="text-white font-bold text-base sm:text-lg mb-2">{milestone.event}</div>
-                    <div className="text-text-muted text-sm leading-relaxed">{milestone.detail}</div>
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { title: 'Enterprise Software Development', desc: 'React + Vite frontend, FastAPI backend, PostgreSQL database — modern, maintainable, and scalable.', tags: ['React + Vite', 'FastAPI', 'PostgreSQL'] },
+              { title: 'Industrial Device Integration', desc: 'Native connectivity with weighing scales, barcode scanners, RFID readers, PLCs, and SCADA systems.', tags: ['Weighing Devices', 'RFID', 'PLC / SCADA'] },
+              { title: 'IoT & Sensor Networks', desc: 'Deploy and connect industrial IoT sensors for real-time monitoring, alerts, and predictive maintenance.', tags: ['MQTT', 'Edge Computing', 'Dashboards'] },
+              { title: 'Enterprise System Integration', desc: 'REST API bridges and middleware for SAP, Tally, and legacy enterprise systems.', tags: ['REST APIs', 'SAP', 'Tally'] },
+              { title: 'Business Process Solutions', desc: 'Field-ready Android and web apps for supervisors, operators, and management — all responsive and offline-capable.', tags: ['Android', 'Web Apps', 'Offline Mode'] },
+              { title: 'Post-Deployment & AMC', desc: 'Comprehensive annual maintenance contracts with remote and on-site support, upgrades, and training.', tags: ['Remote Support', 'On-site Service', 'Training'] },
+            ].map((cap, i) => (
+              <motion.div key={cap.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={viewportConfig} transition={{ delay: i * 0.08 }}
+                className="card-enterprise p-6 group hover:border-accent/20 transition-colors">
+                <h3 className="text-white font-bold text-lg mb-3 group-hover:text-accent transition-colors">{cap.title}</h3>
+                <p className="text-text-muted text-sm leading-relaxed mb-5">{cap.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {cap.tags.map((tag) => (
+                    <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-accent/8 border border-accent/15 text-accent/80 font-tech">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-                <div className="hidden md:flex flex-col items-center relative z-10">
-                  <div className="w-4 h-4 rounded-full bg-secondary ring-4 ring-secondary/20" />
-                </div>
-                <div className="hidden md:block flex-1" />
               </motion.div>
             ))}
           </div>
@@ -328,7 +428,7 @@ const About: React.FC = () => {
               <div className="space-y-2">  
                 <div className="flex items-center justify-center gap-2 text-text-muted text-sm">
                   <Mail className="w-4 h-4 text-accent" />
-                  <a href="mailto:privyasolution@gmail.com" className="hover:text-white break-all">privyasolution@gmail.com</a>
+                  <a href="mailto:sales@privyasolution.com" className="hover:text-white break-all">sales@privyasolution.com</a>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-text-muted text-sm">
                   <Phone className="w-4 h-4 text-accent" />

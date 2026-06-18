@@ -96,7 +96,7 @@ export const WhyChoose: React.FC = () => {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              {['10+ Years Experience', 'Surat Based', 'Pan-India Deployment', 'Hardware Experts'].map((tag) => (
+              {['10+ Years Experience', 'Surat Based', 'Nationwide Delivery', 'Hardware Experts'].map((tag) => (
                 <span key={tag} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-text-muted">
                   {tag}
                 </span>

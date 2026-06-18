@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
-import { Menu, X, ChevronDown, ArrowRight, Package, ScanLine, FlaskConical, Scale, Factory, Cpu, Code, Globe, Shield } from 'lucide-react'
+import { Menu, X, ChevronDown, ArrowRight, Package, ScanLine, FlaskConical, Scale, Factory, Cpu, Shield } from 'lucide-react'
 
 const solutions = [
   { name: 'Warehouse Management System',   href: '/solutions/wms',            Icon: Package,    color: 'text-blue-400',   bg: 'bg-blue-500/10' },
@@ -10,8 +10,6 @@ const solutions = [
   { name: 'Weighbridge Management',         href: '/solutions/weighbridge',    Icon: Scale,      color: 'text-orange-400', bg: 'bg-orange-500/10' },
   { name: 'Manufacturing Execution System', href: '/solutions/mes',            Icon: Factory,    color: 'text-green-400',  bg: 'bg-green-500/10' },
   { name: 'IoT & Industrial Automation',    href: '/solutions/iot',            Icon: Cpu,        color: 'text-sky-400',    bg: 'bg-sky-500/10' },
-  { name: 'Custom Software Development',    href: '/solutions/custom-software',Icon: Code,       color: 'text-rose-400',   bg: 'bg-rose-500/10' },
-  { name: 'Web Application Development',    href: '/solutions/web-development',Icon: Globe,      color: 'text-fuchsia-400',bg: 'bg-fuchsia-500/10' },
   { name: 'Annual Maintenance & Support',   href: '/solutions/amc',            Icon: Shield,     color: 'text-teal-400',   bg: 'bg-teal-500/10' },
 ]
 
@@ -173,8 +171,8 @@ export const Header: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 overflow-y-auto lg:hidden"
-            style={{ background: 'rgba(2,6,23,0.99)', backdropFilter: 'blur(20px)' }}
+            className="fixed inset-0 z-[60] overflow-y-auto lg:hidden"
+            style={{ background: 'rgba(2,6,23,1)', backdropFilter: 'blur(24px)' }}
           >
             {/* Mobile logo + close row */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/8">
@@ -235,8 +233,8 @@ export const Header: React.FC = () => {
                 <a href="tel:+919904095104" className="flex items-center gap-3 text-text-muted text-sm hover:text-white transition-colors">
                   📞 +91-9904095104
                 </a>
-                <a href="mailto:privyasolution@gmail.com" className="flex items-center gap-3 text-text-muted text-sm hover:text-white transition-colors">
-                  ✉️ privyasolution@gmail.com
+                <a href="mailto:sales@privyasolution.com" className="flex items-center gap-3 text-text-muted text-sm hover:text-white transition-colors">
+                  ✉️ sales@privyasolution.com
                 </a>
               </div>
             </div>

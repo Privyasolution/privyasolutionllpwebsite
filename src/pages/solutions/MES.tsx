@@ -10,7 +10,7 @@ const MES: React.FC = () => (
     badge="Manufacturing Solutions"
     title="Manufacturing Execution System"
     subtitle="Real-time production control and shop floor digitization"
-    description="Privya Solution's MES bridges the gap between ERP and the shop floor — providing real-time work order execution, OEE tracking, quality management, and production analytics to drive manufacturing excellence."
+    description="Privya Solution's MES bridges the gap between planning systems and the shop floor — providing real-time work order execution, OEE tracking, quality management, and production analytics to drive manufacturing excellence."
     benefits={[
       'Real-time production visibility — know exactly what is happening on every line',
       'OEE improvement of 15-25% through downtime analysis and quick alerts',
@@ -19,7 +19,7 @@ const MES: React.FC = () => (
       'Quality defect reduction through statistical process control alerts',
       'On-time delivery improvement with dynamic scheduling visibility',
       'Energy and resource consumption monitoring per production order',
-      'Integration with ERP, WMS, SCADA, and IoT systems',
+      'Integration with enterprise planning, WMS, SCADA, and IoT systems',
     ]}
     features={[
       { title: 'Work Order Management', description: 'Digital work orders with routing, BOM, resource requirements, and step-by-step operator instructions.', icon: '📋' },
@@ -43,16 +43,16 @@ const MES: React.FC = () => (
     technologies={[
       'PLC Integration', 'SCADA Integration', 'OPC-UA', 'Modbus TCP',
       'Touchscreen HMI', 'Barcode Scanning', 'RFID', 'IoT Sensors',
-      'SAP PP Integration', 'ERP Integration', 'SQL Server', 'REST API',
+      'SAP PP Integration', 'Enterprise System Integration', 'PostgreSQL', 'REST API',
       'Real-time Dashboards', 'Mobile Alerts', 'SPC Charts', 'On-Premise',
     ]}
     workflow={[
-      { step: 1, title: 'Production Planning', description: 'ERP sends production order to MES. MES validates material availability, capacity, and resource readiness.' },
+      { step: 1, title: 'Production Planning', description: 'Production order sent to MES from planning system. MES validates material availability, capacity, and resource readiness.' },
       { step: 2, title: 'Work Order Dispatch', description: 'Work order displayed on shop floor terminal. Operator confirms start with ID scan. Timer starts automatically.' },
       { step: 3, title: 'Material Issuance', description: 'WMS/store issues material against work order. Barcode scan confirms correct material, batch, and quantity.' },
       { step: 4, title: 'Production Execution', description: 'Machine data captured automatically via PLC/SCADA. Manual entries captured via operator terminal.' },
       { step: 5, title: 'Quality Inspection', description: 'In-process QC checks triggered at defined stages. SPC chart updated in real-time. Defects recorded immediately.' },
-      { step: 6, title: 'Completion & Reporting', description: 'Work order closed. Production report generated. ERP updated with actuals. OEE dashboard refreshed.' },
+      { step: 6, title: 'Completion & Reporting', description: 'Work order closed. Production report generated. Enterprise system updated with actuals. OEE dashboard refreshed.' },
     ]}
   />
 )

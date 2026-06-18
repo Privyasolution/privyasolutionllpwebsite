@@ -14,6 +14,10 @@ export default {
         surface: '#0B1220',
         'text-white': '#FFFFFF',
         'text-muted': '#94A3B8',
+        // Design-system aliases used across service-detail components
+        'brand-navy': '#060D1A',
+        'brand-cyan': '#06B6D4',
+        'brand-blue': '#2563EB',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -25,6 +29,7 @@ export default {
         'spin-slow': 'spin 20s linear infinite',
         'gradient': 'gradient 8s ease infinite',
         'shimmer': 'shimmer 2s linear infinite',
+        'marquee': 'marquee 30s linear infinite',
       },
       keyframes: {
         float: {
@@ -38,6 +43,10 @@ export default {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
       backgroundSize: {

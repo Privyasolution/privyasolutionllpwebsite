@@ -13,7 +13,7 @@ const cloudModules = [
   { id: 'analytics', icon: BarChart3,  name: 'Analytics & BI',   desc: 'Real-time dashboards',    color: '#F97316' },
   { id: 'cloud',     icon: Cloud,      name: 'Cloud / On-Prem',  desc: 'Flexible deployment',     color: '#3B82F6' },
   { id: 'mobile',    icon: Smartphone, name: 'Mobile Apps',      desc: 'Android & iOS field ops', color: '#6366F1' },
-  { id: 'erp',       icon: Database,   name: 'ERP Connectors',   desc: 'SAP, Tally & API bridge', color: '#14B8A6' },
+  { id: 'erp',       icon: Database,   name: 'Enterprise Connectors', desc: 'SAP, Tally & API bridge', color: '#14B8A6' },
 ]
 
 const appModules = [
@@ -22,7 +22,7 @@ const appModules = [
   { id: 'barcode',     icon: ScanLine,     name: 'Barcode & QR', desc: 'Traceability & Batch Tracking',     color: '#06B6D4' },
   { id: 'pharma',      icon: FlaskConical, name: 'Pharma Scale', desc: 'GMP Weighing & Compliance',         color: '#8B5CF6' },
   { id: 'weighbridge', icon: Scale,        name: 'Weighbridge',  desc: 'RFID Vehicle Weighing',             color: '#F59E0B' },
-  { id: 'custom',      icon: Code,         name: 'Custom Dev',   desc: 'Bespoke Enterprise Software',       color: '#F43F5E' },
+  { id: 'custom',      icon: Code,         name: 'Customization', desc: 'Tailored Industrial Workflows',     color: '#F43F5E' },
 ]
 
 const hardwareModules = [
@@ -218,7 +218,7 @@ export const TechEcosystem: React.FC = () => (
         <LayerBand
           icon={Cloud}
           label="Cloud & Intelligence Layer"
-          sublabel="Real-time analytics, remote dashboards, mobile operations & ERP integration"
+          sublabel="Real-time analytics, remote dashboards, mobile operations & enterprise system integration"
           accentColor="#3B82F6"
           bgGradient="linear-gradient(135deg, rgba(30,58,138,0.25) 0%, rgba(7,89,133,0.15) 100%)"
           borderColor="border-blue-500/20"
@@ -283,7 +283,7 @@ export const TechEcosystem: React.FC = () => (
 
             {/* Capability chips */}
             <div className="flex-shrink-0 flex flex-wrap sm:flex-col gap-2 justify-center">
-              {['Unified API Gateway', 'Real-time Streaming', 'Role-based Security', 'Multi-site Support'].map((cap) => (
+              {['React + Vite Frontend', 'FastAPI Backend', 'PostgreSQL Database', 'Multi-site Support'].map((cap) => (
                 <div
                   key={cap}
                   className="px-3 py-1.5 rounded-lg text-[11px] font-semibold text-accent font-tech whitespace-nowrap"
@@ -323,7 +323,7 @@ export const TechEcosystem: React.FC = () => (
               <span className="text-xs font-bold tracking-widest uppercase font-tech text-blue-400">
                 Enterprise Application Layer
               </span>
-              <span className="text-text-muted text-[11px] ml-2 hidden sm:inline">— Industry-specific software modules for every operational domain</span>
+              <span className="text-text-muted text-[11px] ml-2 hidden sm:inline">— React + Vite · FastAPI · PostgreSQL · REST APIs · Industry-specific modules</span>
             </div>
           </div>
 
@@ -342,7 +342,7 @@ export const TechEcosystem: React.FC = () => (
         <LayerBand
           icon={Cpu}
           label="Hardware & IoT Layer"
-          sublabel="Physical devices, sensors, RFID, PLCs, SCADA — the operational ground layer"
+          sublabel="Weighing Devices · RFID Readers · PLCs · SCADA · IoT Sensors — the operational ground layer"
           accentColor="#10B981"
           bgGradient="linear-gradient(135deg, rgba(6,78,59,0.25) 0%, rgba(15,118,110,0.12) 100%)"
           borderColor="border-emerald-500/20"

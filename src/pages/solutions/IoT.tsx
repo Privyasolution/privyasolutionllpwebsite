@@ -17,7 +17,7 @@ const IoT: React.FC = () => (
       'Automated alerts for critical parameters: temperature, pressure, vibration',
       'Remote monitoring and control from anywhere via web or mobile',
       'Energy consumption monitoring and optimization per machine/line',
-      'Seamless integration with SCADA, PLC, MES, and ERP systems',
+      'Seamless integration with SCADA, PLC, MES, and enterprise systems',
       'Custom automation workflows using rule-based and AI-driven logic',
       'Scalable architecture from single machine to entire plant network',
     ]}
@@ -52,7 +52,7 @@ const IoT: React.FC = () => (
       { step: 3, title: 'Data Transmission', description: 'Processed data streamed securely to cloud platform or on-premise server with encryption and authentication.' },
       { step: 4, title: 'Real-time Analytics', description: 'Live dashboards display machine KPIs, process trends, and OEE metrics with sub-second data refresh rates.' },
       { step: 5, title: 'Predictive Intelligence', description: 'ML models analyze historical patterns to predict failures, optimize schedules, and recommend maintenance actions.' },
-      { step: 6, title: 'Alerts & Actions', description: 'Automated alerts sent to operators and managers. Maintenance tickets auto-created in ERP/CMMS on anomaly detection.' },
+      { step: 6, title: 'Alerts & Actions', description: 'Automated alerts sent to operators and managers. Maintenance tickets auto-created in enterprise/CMMS system on anomaly detection.' },
     ]}
   />
 )
