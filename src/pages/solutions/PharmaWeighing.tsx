@@ -22,7 +22,7 @@ const PharmaWeighing: React.FC = () => (
       'Paperless dispensing room operations',
     ]}
     features={[
-      { title: 'Balance Integration', description: 'Direct RS232/USB integration with 50+ balance brands — Mettler-Toledo, Sartorius, Shimadzu, Ohaus, and more.', icon: '⚖️' },
+      { title: 'Balance Integration', description: 'Direct RS232/USB/Ethernet integration with analytical, precision, and floor-scale weighing balances across the facility.', icon: '⚖️' },
       { title: 'GMP Dispensing', description: 'Step-by-step dispensing workflow with mandatory tare, pre-weigh, and post-weigh verification at every stage.', icon: '🧪' },
       { title: 'Electronic Batch Records', description: 'Complete eBMR with automatic capture of weights, operator, date/time, and balance calibration status.', icon: '📋' },
       { title: '21 CFR Part 11', description: 'Full electronic signature support, audit trail, user access control, and data integrity compliance.', icon: '🔒' },
@@ -41,8 +41,7 @@ const PharmaWeighing: React.FC = () => (
       { industry: 'Veterinary Pharma', useCase: 'Schedule M compliance for animal drugs', outcome: 'Achieved Schedule M compliance in 3 weeks post-implementation' },
     ]}
     technologies={[
-      'Mettler-Toledo Integration', 'Sartorius Integration', 'Shimadzu Integration',
-      'Ohaus Integration', 'RS232 / USB / Ethernet', '21 CFR Part 11',
+      'Weighing Balance Integration', 'RS232 / USB / Ethernet', '21 CFR Part 11',
       'Schedule M (India)', 'GMP Guidelines', 'LIMS Integration',
       'Enterprise System Integration', 'SAP PM Integration', 'PDF Report Generation',
       'Electronic Signature', 'Audit Trail', 'PostgreSQL', 'On-Premise',

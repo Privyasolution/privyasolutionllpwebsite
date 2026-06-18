@@ -13,7 +13,7 @@ const ScaleIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const data: ProjectData = {
   meta: {
-    title: 'IPQC Smart Verification System — Amneal Pharmaceuticals | Privya Solution LLP',
+    title: 'QualiWeigh — Amneal Pharmaceuticals | Privya Solution LLP',
     description:
       'GMP-compliant IPQC digital dispensing system for Amneal Pharmaceuticals — 21 CFR Part 11 compliance, balance API integration, dual-operator verification, and electronic batch records.',
     canonical: '/projects/ipqc-verification',
@@ -24,10 +24,10 @@ const data: ProjectData = {
     badgeColor: '#F97316',
     client: 'Amneal Pharmaceuticals',
     clientLogo: '/clients/amneal.jpg',
-    projectName: 'IPQC Smart Verification System',
-    tagline: 'GMP-Compliant Digital Dispensing with 21 CFR Part 11 Compliance',
+    projectName: 'QualiWeigh',
+    tagline: 'Real-Time Instrument Connectivity & Digital IPQC Platform for Pharmaceutical Manufacturing',
     description:
-      'A precision IPQC and dispensing platform for Amneal Pharmaceuticals. Connects directly to Mettler-Toledo and Sartorius balances via LAN, enforces real-time tolerance checks, routes critical materials through dual-operator verification, and generates tamper-proof electronic batch records — fully compliant with 21 CFR Part 11 and ALCOA+.',
+      'A precision IPQC and dispensing platform for Amneal Pharmaceuticals. Connects directly to weighing balances via LAN, enforces real-time tolerance checks, routes critical materials through dual-operator verification, and generates tamper-proof electronic batch records — fully compliant with 21 CFR Part 11 and ALCOA+.',
     kpis: [
       { value: '0%',   label: 'Dispensing Errors' },
       { value: '100%', label: 'Audit Compliance'  },
@@ -74,7 +74,7 @@ const data: ProjectData = {
       icon: ScaleIcon,
       title: 'Balance API Integration',
       description:
-        'Direct Mettler-Toledo and Sartorius balance connectivity via LAN, Wi-Fi, and RS232 — zero manual weight entry.',
+        'Direct weighing balance connectivity via LAN, Wi-Fi, and RS232 — zero manual weight entry.',
     },
     {
       icon: CheckCircle2,
@@ -144,7 +144,7 @@ const data: ProjectData = {
   ],
 
   outcome:
-    'Amneal Pharmaceuticals now operates a fully GMP-compliant digital dispensing environment across all dispensing rooms. The IPQC Smart Verification System eliminated all manual transcription, enforced 21 CFR Part 11 electronic records, and delivered a 30% throughput improvement. The facility passed its subsequent regulatory audit with zero data integrity findings.',
+    'Amneal Pharmaceuticals now operates a fully GMP-compliant digital dispensing environment across all dispensing rooms. QualiWeigh eliminated all manual transcription, enforced 21 CFR Part 11 electronic records, and delivered a 30% throughput improvement. The facility passed its subsequent regulatory audit with zero data integrity findings.',
 }
 
 const IPQCVerification: React.FC = () => (

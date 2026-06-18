@@ -28,7 +28,7 @@ const featuredProjects: FeaturedProjectCard[] = [
     badge: 'Pharmaceutical Manufacturing',
     badgeColor: '#F97316',
     client: 'Amneal Pharmaceuticals',
-    name: 'IPQC Smart Verification System',
+    name: 'QualiWeigh',
     description:
       'GMP-compliant digital dispensing system with direct balance API integration, real-time IPQC validation, dual-operator verification, and 21 CFR Part 11 electronic batch records.',
     logo: '/clients/amneal.jpg',
@@ -88,7 +88,7 @@ const portfolioProjects: Project[] = [
     title: 'GMP Pharma Weighing System',
     category: 'Pharma',
     industry: 'Pharmaceutical',
-    description: 'GMP-compliant dispensing for an API manufacturer — Mettler-Toledo integration, 21 CFR Part 11 electronic records, and automated batch documentation.',
+    description: 'GMP-compliant dispensing for an API manufacturer — direct weighing balance integration, 21 CFR Part 11 electronic records, and automated batch documentation.',
     tags: ['GMP', '21 CFR Part 11', 'Balance API'],
     color: 'from-violet-600 to-purple-500',
     icon: '⚗️',
