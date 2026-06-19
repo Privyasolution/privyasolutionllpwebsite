@@ -1,5 +1,5 @@
 import React from 'react'
-import { Code } from 'lucide-react'
+import { Code, Search, Factory, Plug, RefreshCw, Link2, Zap, Database, Lock, Shield } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
 
 const CustomSoftware: React.FC = () => (
@@ -22,15 +22,15 @@ const CustomSoftware: React.FC = () => (
       'Post-delivery support and continuous enhancement',
     ]}
     features={[
-      { title: 'Business Analysis', description: 'In-depth process analysis, stakeholder interviews, and requirement documentation before a single line of code is written.', icon: '🔍' },
-      { title: 'Industrial Applications', description: 'Specialized in factory, warehouse, and logistics applications with hardware device integration expertise.', icon: '🏭' },
-      { title: 'Hardware Integration', description: 'Integration with weighing scales, barcode scanners, RFID readers, PLCs, cameras, and any industrial device.', icon: '🔌' },
-      { title: 'Legacy Modernization', description: 'Transform aging VB6, FoxPro, or Access applications into modern, secure, web-based enterprise systems.', icon: '🔄' },
-      { title: 'API Development', description: 'RESTful API development for third-party integrations, mobile apps, and inter-system communication.', icon: '🔗' },
-      { title: 'Agile Delivery', description: 'Sprint-based development with regular demos, transparent progress tracking, and flexible scope management.', icon: '⚡' },
-      { title: 'Database Design', description: 'Enterprise-grade SQL Server or PostgreSQL database design optimized for industrial transaction volumes.', icon: '🗄️' },
-      { title: 'Security', description: 'Role-based access control, encrypted data storage, audit logging, and secure API design as standard.', icon: '🔒' },
-      { title: 'Support & AMC', description: 'Post-deployment support, bug fixes, enhancements, and annual maintenance contracts for long-term partnership.', icon: '🛡️' },
+      { title: 'Business Analysis', description: 'In-depth process analysis, stakeholder interviews, and requirement documentation before a single line of code is written.', icon: Search },
+      { title: 'Industrial Applications', description: 'Specialized in factory, warehouse, and logistics applications with hardware device integration expertise.', icon: Factory },
+      { title: 'Hardware Integration', description: 'Integration with weighing scales, barcode scanners, RFID readers, PLCs, cameras, and any industrial device.', icon: Plug },
+      { title: 'Legacy Modernization', description: 'Transform aging VB6, FoxPro, or Access applications into modern, secure, web-based enterprise systems.', icon: RefreshCw },
+      { title: 'API Development', description: 'RESTful API development for third-party integrations, mobile apps, and inter-system communication.', icon: Link2 },
+      { title: 'Agile Delivery', description: 'Sprint-based development with regular demos, transparent progress tracking, and flexible scope management.', icon: Zap },
+      { title: 'Database Design', description: 'Enterprise-grade SQL Server or PostgreSQL database design optimized for industrial transaction volumes.', icon: Database },
+      { title: 'Security', description: 'Role-based access control, encrypted data storage, audit logging, and secure API design as standard.', icon: Lock },
+      { title: 'Support & AMC', description: 'Post-deployment support, bug fixes, enhancements, and annual maintenance contracts for long-term partnership.', icon: Shield },
     ]}
     useCases={[
       { industry: 'Manufacturing', useCase: 'Production planning and scheduling tool', outcome: 'Replaced 5 Excel spreadsheets with one integrated system' },

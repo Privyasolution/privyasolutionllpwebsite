@@ -12,7 +12,7 @@ const ScaleIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const data: ProjectData = {
   meta: {
-    title: 'Vehicle Gross-Tare Validation System | Privya Solution LLP',
+    title: 'GateWeigh | Privya Solution LLP',
     description:
       'Fully automated weighbridge management with RFID vehicle detection, CCTV anti-fraud verification, automatic gross-tare-net calculation, and real-time ERP integration.',
     canonical: '/projects/vehicle-weighbridge',
@@ -22,7 +22,7 @@ const data: ProjectData = {
     badge: 'Steel, Mining & Logistics',
     badgeColor: '#F59E0B',
     client: 'Steel & Logistics Industry',
-    projectName: 'Vehicle Gross-Tare Validation System',
+    projectName: 'GateWeigh',
     tagline: 'Fully Automated Weighbridge — RFID + CCTV + Anti-Fraud + ERP',
     description:
       'A fully unattended weighbridge management system that automates the complete vehicle weighment cycle — RFID-based vehicle identification, CCTV verification at entry and exit, dual gross-tare weighment, net weight calculation, delivery challan generation, and real-time ERP sync — with no manual operator involvement.',
@@ -146,7 +146,7 @@ const data: ProjectData = {
   ],
 
   outcome:
-    'The Vehicle Gross-Tare Validation System transformed a manual, fraud-prone weighbridge into a fully automated, unmanned facility operating 24 hours a day. Vehicle throughput tripled, weighbridge staffing costs were eliminated, and no weight fraud incidents have occurred since implementation. Every material movement is tracked in real time with CCTV evidence and posted to ERP within seconds.',
+    'GateWeigh transformed a manual, fraud-prone weighbridge into a fully automated, unmanned facility operating 24 hours a day. Vehicle throughput tripled, weighbridge staffing costs were eliminated, and no weight fraud incidents have occurred since implementation. Every material movement is tracked in real time with CCTV evidence and posted to ERP within seconds.',
 }
 
 const VehicleWeighbridge: React.FC = () => <ProjectDetailPage data={data} />

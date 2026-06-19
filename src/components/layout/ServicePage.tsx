@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, LucideIcon } from 'lucide-react'
 import { viewportConfig } from '@/utils/animations'
 import { CTA } from '@/components/sections/CTA'
+import type { IconComponent } from '@/types'
 
 interface ServicePageProps {
   icon: LucideIcon
@@ -14,7 +15,7 @@ interface ServicePageProps {
   subtitle: string
   description: string
   benefits: string[]
-  features: { title: string; description: string; icon: string }[]
+  features: { title: string; description: string; icon: IconComponent }[]
   useCases: { industry: string; useCase: string; outcome: string }[]
   technologies: string[]
   workflow: { step: number; title: string; description: string }[]
@@ -203,7 +204,12 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                 transition={{ delay: i * 0.07 }}
                 className="card-enterprise p-7 group"
               >
-                <div className="text-3xl mb-4">{feat.icon}</div>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                  style={{ background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.2)' }}
+                >
+                  <feat.icon className="w-6 h-6 text-blue-400" />
+                </div>
                 <h3 className="text-white font-bold text-lg mb-3">{feat.title}</h3>
                 <p className="text-text-muted text-sm leading-relaxed">{feat.description}</p>
               </motion.div>

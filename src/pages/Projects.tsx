@@ -1,10 +1,11 @@
 import React, { useState, memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, ChevronRight, Phone, MessageSquare } from 'lucide-react'
+import { ArrowRight, ChevronRight, Phone, MessageSquare, Warehouse, FlaskConical, Cog, Radio, Barcode } from 'lucide-react'
 import { viewportConfig } from '@/utils/animations'
 import { CTA } from '@/components/sections/CTA'
 import { PageSEO } from '@/components/ui/PageSEO'
 import { Link } from 'react-router-dom'
+import { DigitalScaleIcon } from '@/components/projects/DigitalScaleIcon'
 import type { Project } from '@/types'
 
 // ─── DATA ──────────────────────────────────────────────────────────────────────
@@ -40,7 +41,7 @@ const featuredProjects: FeaturedProjectCard[] = [
     badge: 'FMCG & Consumer Goods',
     badgeColor: '#10B981',
     client: 'Believe International Limited',
-    name: 'Auto Weight Capture System',
+    name: 'WeightSync API',
     description:
       'Multi-station weighing automation with real-time balance API, automated variance detection, supervisor approval workflow, and instant ERP synchronization.',
     logo: '/clients/believe.webp',
@@ -52,7 +53,7 @@ const featuredProjects: FeaturedProjectCard[] = [
     badge: 'Logistics & Courier',
     badgeColor: '#8B5CF6',
     client: 'Courier & Logistics Operations',
-    name: 'Smart Parcel Verification System',
+    name: 'VisionVerify',
     description:
       'Auto stable weight detection integrated with IP camera capture — generates an instant photo-embedded PDF receipt per parcel. Zero billing disputes, 5× faster processing.',
     workflow: ['Parcel Scan', 'Weight Lock', 'Camera Capture', 'PDF Receipt', 'WMS Sync'],
@@ -63,7 +64,7 @@ const featuredProjects: FeaturedProjectCard[] = [
     badge: 'Steel, Mining & Logistics',
     badgeColor: '#F59E0B',
     client: 'Steel & Logistics Industry',
-    name: 'Vehicle Gross-Tare Validation System',
+    name: 'GateWeigh',
     description:
       'Fully unattended weighbridge with RFID vehicle identification, CCTV anti-fraud verification, automatic gross-tare-net calculation, challan generation, and real-time ERP posting.',
     workflow: ['RFID Detect', 'CCTV Verify', 'Gross Weight', 'Load/Unload', 'Tare Weight', 'Net & ERP'],
@@ -81,7 +82,7 @@ const portfolioProjects: Project[] = [
     description: 'End-to-end warehouse management across 3 facilities covering 2.5 lakh sq ft — wave picking, barcode integration, and live enterprise system connectivity.',
     tags: ['WMS', 'Barcode', 'Multi-Location'],
     color: 'from-blue-600 to-cyan-500',
-    icon: '🏭',
+    icon: Warehouse,
   },
   {
     id: 2,
@@ -91,7 +92,7 @@ const portfolioProjects: Project[] = [
     description: 'GMP-compliant dispensing for an API manufacturer — direct weighing balance integration, 21 CFR Part 11 electronic records, and automated batch documentation.',
     tags: ['GMP', '21 CFR Part 11', 'Balance API'],
     color: 'from-violet-600 to-purple-500',
-    icon: '⚗️',
+    icon: FlaskConical,
   },
   {
     id: 3,
@@ -101,7 +102,7 @@ const portfolioProjects: Project[] = [
     description: 'Fully unattended weighbridge with RFID vehicle identification, CCTV integration, anti-fraud mechanisms, and direct ERP connectivity.',
     tags: ['Weighbridge', 'RFID', 'CCTV', 'ERP'],
     color: 'from-orange-600 to-amber-500',
-    icon: '⚖️',
+    icon: DigitalScaleIcon,
   },
   {
     id: 4,
@@ -111,7 +112,7 @@ const portfolioProjects: Project[] = [
     description: 'Shop-floor digitization for 48 injection molding machines — real-time OEE tracking, downtime management, quality control, and Modbus connectivity.',
     tags: ['MES', 'OEE', 'Modbus', 'Quality'],
     color: 'from-green-600 to-emerald-500',
-    icon: '🔧',
+    icon: Cog,
   },
   {
     id: 5,
@@ -121,7 +122,7 @@ const portfolioProjects: Project[] = [
     description: '120+ sensors across production lines — real-time temperature, pressure, and flow monitoring with predictive maintenance alerting.',
     tags: ['IoT', 'MQTT', 'Predictive Maintenance'],
     color: 'from-sky-600 to-blue-500',
-    icon: '📡',
+    icon: Radio,
   },
   {
     id: 6,
@@ -131,7 +132,7 @@ const portfolioProjects: Project[] = [
     description: 'Complete batch traceability with GS1 compliance, FEFO expiry management, and one-click product recall capability.',
     tags: ['Barcode', 'GS1', 'FEFO', 'Recall'],
     color: 'from-cyan-600 to-teal-500',
-    icon: '🍃',
+    icon: Barcode,
   },
 ]
 
@@ -236,8 +237,8 @@ const PortfolioCard = memo(({ project, index }: { project: Project; index: numbe
     style={{ background: '#0B1220' }}
   >
     <div className="flex items-center justify-between mb-5">
-      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center text-lg flex-shrink-0`}>
-        {project.icon}
+      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center flex-shrink-0`}>
+        <project.icon className="w-5 h-5 text-white" />
       </div>
       <span className="text-xs px-2.5 py-1 rounded-md border border-slate-700 bg-slate-800 text-slate-300 font-medium">
         {project.category}

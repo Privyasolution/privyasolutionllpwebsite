@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cpu } from 'lucide-react'
+import { Cpu, Plug, Radio, Monitor, Brain, AlertTriangle, Zap, Gamepad2, Database, Cloud } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
 
 const IoT: React.FC = () => (
@@ -22,15 +22,15 @@ const IoT: React.FC = () => (
       'Scalable architecture from single machine to entire plant network',
     ]}
     features={[
-      { title: 'Machine Connectivity', description: 'Connect any machine via OPC-UA, Modbus, MQTT, RS232, or custom protocols — brand-agnostic integration.', icon: '🔌' },
-      { title: 'Sensor Integration', description: 'Temperature, pressure, vibration, flow, level, humidity, and custom sensor integration with edge computing.', icon: '📡' },
-      { title: 'Real-time Dashboard', description: 'Live operational dashboards with customizable KPIs, Gantt charts, and geo-mapped facility views.', icon: '🖥️' },
-      { title: 'Predictive Maintenance', description: 'ML-based anomaly detection identifying machine degradation patterns before failure occurs.', icon: '🔮' },
-      { title: 'Alert Management', description: 'Multi-level alerts via SMS, email, and mobile push for critical machine parameters and threshold breaches.', icon: '🚨' },
-      { title: 'Energy Monitoring', description: 'Per-machine energy consumption tracking with efficiency benchmarking and carbon footprint reporting.', icon: '⚡' },
-      { title: 'Remote Control', description: 'Authorized remote commands for machine start/stop, setpoint changes, and recipe downloads.', icon: '🎮' },
-      { title: 'Data Historian', description: 'Long-term industrial time-series data storage with high-speed trend analysis and anomaly detection.', icon: '📊' },
-      { title: 'Cloud & Edge', description: 'Hybrid architecture with edge processing for latency-critical operations and cloud analytics for insights.', icon: '☁️' },
+      { title: 'Machine Connectivity', description: 'Connect any machine via OPC-UA, Modbus, MQTT, RS232, or custom protocols — brand-agnostic integration.', icon: Plug },
+      { title: 'Sensor Integration', description: 'Temperature, pressure, vibration, flow, level, humidity, and custom sensor integration with edge computing.', icon: Radio },
+      { title: 'Real-time Dashboard', description: 'Live operational dashboards with customizable KPIs, Gantt charts, and geo-mapped facility views.', icon: Monitor },
+      { title: 'Predictive Maintenance', description: 'ML-based anomaly detection identifying machine degradation patterns before failure occurs.', icon: Brain },
+      { title: 'Alert Management', description: 'Multi-level alerts via SMS, email, and mobile push for critical machine parameters and threshold breaches.', icon: AlertTriangle },
+      { title: 'Energy Monitoring', description: 'Per-machine energy consumption tracking with efficiency benchmarking and carbon footprint reporting.', icon: Zap },
+      { title: 'Remote Control', description: 'Authorized remote commands for machine start/stop, setpoint changes, and recipe downloads.', icon: Gamepad2 },
+      { title: 'Data Historian', description: 'Long-term industrial time-series data storage with high-speed trend analysis and anomaly detection.', icon: Database },
+      { title: 'Cloud & Edge', description: 'Hybrid architecture with edge processing for latency-critical operations and cloud analytics for insights.', icon: Cloud },
     ]}
     useCases={[
       { industry: 'Manufacturing', useCase: 'Production line OEE monitoring', outcome: 'Reduced unplanned downtime by 35% in first quarter' },

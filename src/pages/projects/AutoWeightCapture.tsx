@@ -229,7 +229,7 @@ function ERPIntegrationFlow() {
 
 const data: ProjectData = {
   meta: {
-    title: 'Auto Weight Capture System — Believe International | Privya Solution LLP',
+    title: 'WeightSync API — Believe International | Privya Solution LLP',
     description:
       'Multi-station automated weighing system for Believe International Limited — real-time balance API, supervisor approval workflow, variance detection, and ERP synchronization.',
     canonical: '/projects/auto-weight-capture',
@@ -240,7 +240,7 @@ const data: ProjectData = {
     badgeColor: '#10B981',
     client: 'Believe International Limited',
     clientLogo: '/clients/believe.webp',
-    projectName: 'Auto Weight Capture System',
+    projectName: 'WeightSync API',
     tagline: 'Multi-Station Weighing Automation with Real-Time ERP Integration',
     description:
       'A production-scale automated weighing platform deployed across all dispensing stations at Believe International Limited. Direct balance API integration, automated variance detection, supervisor approval routing, and instant ERP sync — eliminating every manual transcription step.',

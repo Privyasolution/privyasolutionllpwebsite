@@ -1,5 +1,5 @@
 import React from 'react'
-import { Package } from 'lucide-react'
+import { Package, Inbox, CheckCircle2, ScanLine, Link2, TrendingUp, Warehouse, RefreshCw, Zap } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
 
 const WMS: React.FC = () => (
@@ -22,15 +22,15 @@ const WMS: React.FC = () => (
       'Multi-unit handling: lot, batch, serial, and expiry tracking',
     ]}
     features={[
-      { title: 'Inbound Management', description: 'Streamlined receiving with PO matching, quality inspection workflows, and automated putaway suggestions.', icon: '📥' },
-      { title: 'Inventory Control', description: 'Real-time stock levels, multi-location tracking, lot/batch/serial control, and expiry date management.', icon: '📦' },
-      { title: 'Order Fulfillment', description: 'Wave picking, zone picking, cluster picking, and smart pick path optimization for maximum efficiency.', icon: '✅' },
-      { title: 'Barcode & RFID', description: 'Native support for barcode scanners, RFID readers, and mobile devices — any hardware, any brand.', icon: '📊' },
-      { title: 'Enterprise System Integration', description: 'Pre-built connectors for SAP, Tally, Oracle, and any enterprise system through REST API or direct DB integration.', icon: '🔗' },
-      { title: 'Analytics Dashboard', description: 'Real-time KPI dashboards: fill rate, cycle time, accuracy, space utilization, and labor productivity.', icon: '📈' },
-      { title: 'Multi-Warehouse', description: 'Manage multiple warehouses, zones, racks, and bin locations from a single unified platform.', icon: '🏭' },
-      { title: 'Returns Management', description: 'Streamlined reverse logistics with damage assessment, restocking, and vendor return workflows.', icon: '🔄' },
-      { title: 'Cross-Docking', description: 'Direct flow-through operations without put-away for high-velocity items and just-in-time requirements.', icon: '⚡' },
+      { title: 'Inbound Management', description: 'Streamlined receiving with PO matching, quality inspection workflows, and automated putaway suggestions.', icon: Inbox },
+      { title: 'Inventory Control', description: 'Real-time stock levels, multi-location tracking, lot/batch/serial control, and expiry date management.', icon: Package },
+      { title: 'Order Fulfillment', description: 'Wave picking, zone picking, cluster picking, and smart pick path optimization for maximum efficiency.', icon: CheckCircle2 },
+      { title: 'Barcode & RFID', description: 'Native support for barcode scanners, RFID readers, and mobile devices — any hardware, any brand.', icon: ScanLine },
+      { title: 'Enterprise System Integration', description: 'Pre-built connectors for SAP, Tally, Oracle, and any enterprise system through REST API or direct DB integration.', icon: Link2 },
+      { title: 'Analytics Dashboard', description: 'Real-time KPI dashboards: fill rate, cycle time, accuracy, space utilization, and labor productivity.', icon: TrendingUp },
+      { title: 'Multi-Warehouse', description: 'Manage multiple warehouses, zones, racks, and bin locations from a single unified platform.', icon: Warehouse },
+      { title: 'Returns Management', description: 'Streamlined reverse logistics with damage assessment, restocking, and vendor return workflows.', icon: RefreshCw },
+      { title: 'Cross-Docking', description: 'Direct flow-through operations without put-away for high-velocity items and just-in-time requirements.', icon: Zap },
     ]}
     useCases={[
       { industry: 'Manufacturing', useCase: 'Raw material management and WIP tracking', outcome: 'Reduced raw material waste by 25% through better visibility' },

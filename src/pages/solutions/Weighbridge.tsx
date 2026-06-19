@@ -1,6 +1,7 @@
 import React from 'react'
-import { Scale } from 'lucide-react'
+import { Scale, Radio, ShieldAlert, Camera, Bot, RefreshCw, Link2, AlertTriangle, Monitor } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
+import { DigitalScaleIcon } from '@/components/projects/DigitalScaleIcon'
 
 const Weighbridge: React.FC = () => (
   <ServicePage
@@ -22,15 +23,15 @@ const Weighbridge: React.FC = () => (
       'Multi-weighbridge management from centralized dashboard',
     ]}
     features={[
-      { title: 'RFID Vehicle ID', description: 'RFID tag-based automatic vehicle identification at entry — no manual typing, no human errors, no manipulation.', icon: '📡' },
-      { title: 'Auto Weight Capture', description: 'Direct interface with weighbridge controller for automatic weight capture with calibration certificate tracking.', icon: '⚖️' },
-      { title: 'Anti-Cheat System', description: 'Axle weight variance analysis, minimum weight time enforcement, CCTV frame capture, and anomaly detection.', icon: '🛡️' },
-      { title: 'Photo Documentation', description: 'Automatic camera snapshot at each weighment — vehicle, registration plate, and load visible in every transaction.', icon: '📷' },
-      { title: 'Unattended Operation', description: 'Fully automated entry/exit with traffic light control, boom barrier automation, and remote supervision.', icon: '🤖' },
-      { title: 'Challan Generation', description: 'Automatic weighment challan, delivery challan, and invoice generation with second weighment completion.', icon: '🔄' },
-      { title: 'Enterprise System Integration', description: 'Seamless integration with purchase, dispatch, and billing modules of any enterprise platform through API or direct DB.', icon: '🔗' },
-      { title: 'Overload Alerts', description: 'Real-time SMS and email alerts for overloaded vehicles, underweight deliveries, and unauthorized vehicles.', icon: '🚨' },
-      { title: 'Multi-Site Dashboard', description: 'Centralized monitoring of all weighbridges across multiple locations from a single management dashboard.', icon: '🖥️' },
+      { title: 'RFID Vehicle ID', description: 'RFID tag-based automatic vehicle identification at entry — no manual typing, no human errors, no manipulation.', icon: Radio },
+      { title: 'Auto Weight Capture', description: 'Direct interface with weighbridge controller for automatic weight capture with calibration certificate tracking.', icon: DigitalScaleIcon },
+      { title: 'Anti-Cheat System', description: 'Axle weight variance analysis, minimum weight time enforcement, CCTV frame capture, and anomaly detection.', icon: ShieldAlert },
+      { title: 'Photo Documentation', description: 'Automatic camera snapshot at each weighment — vehicle, registration plate, and load visible in every transaction.', icon: Camera },
+      { title: 'Unattended Operation', description: 'Fully automated entry/exit with traffic light control, boom barrier automation, and remote supervision.', icon: Bot },
+      { title: 'Challan Generation', description: 'Automatic weighment challan, delivery challan, and invoice generation with second weighment completion.', icon: RefreshCw },
+      { title: 'Enterprise System Integration', description: 'Seamless integration with purchase, dispatch, and billing modules of any enterprise platform through API or direct DB.', icon: Link2 },
+      { title: 'Overload Alerts', description: 'Real-time SMS and email alerts for overloaded vehicles, underweight deliveries, and unauthorized vehicles.', icon: AlertTriangle },
+      { title: 'Multi-Site Dashboard', description: 'Centralized monitoring of all weighbridges across multiple locations from a single management dashboard.', icon: Monitor },
     ]}
     useCases={[
       { industry: 'Steel & Metals', useCase: 'Inbound raw material and outbound finished goods weighing', outcome: 'Eliminated 99% of weighment discrepancies post-implementation' },

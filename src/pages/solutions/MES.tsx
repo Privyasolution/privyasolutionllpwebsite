@@ -1,5 +1,5 @@
 import React from 'react'
-import { Factory } from 'lucide-react'
+import { Factory, ClipboardList, BarChart3, Calendar, CheckCircle2, PauseCircle, Search, Monitor, Settings2, TrendingUp } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
 
 const MES: React.FC = () => (
@@ -22,15 +22,15 @@ const MES: React.FC = () => (
       'Integration with enterprise planning, WMS, SCADA, and IoT systems',
     ]}
     features={[
-      { title: 'Work Order Management', description: 'Digital work orders with routing, BOM, resource requirements, and step-by-step operator instructions.', icon: '📋' },
-      { title: 'OEE Tracking', description: 'Automatic availability, performance, and quality capture with drill-down root cause analysis for losses.', icon: '📊' },
-      { title: 'Production Scheduling', description: 'Visual production board with drag-and-drop scheduling, capacity checks, and real-time progress tracking.', icon: '📅' },
-      { title: 'Quality Management', description: 'In-process quality checks, SPC charts, defect recording, and automatic hold on out-of-control conditions.', icon: '✅' },
-      { title: 'Downtime Management', description: 'One-touch downtime logging with reason codes, duration tracking, and MTTR/MTBF analytics dashboards.', icon: '⏸️' },
-      { title: 'Material Traceability', description: 'Complete component genealogy linking finished goods to every raw material batch and production operation.', icon: '🔍' },
-      { title: 'Operator Interface', description: 'Touchscreen operator terminals showing work order details, quality checks, material requirements, and alerts.', icon: '🖥️' },
-      { title: 'SCADA Integration', description: 'Direct machine data collection from PLCs, SCADA systems, and industrial controllers for automated OEE.', icon: '⚙️' },
-      { title: 'Production Reports', description: 'Shift production reports, daily/weekly summaries, variance analysis, and regulatory-compliant batch records.', icon: '📈' },
+      { title: 'Work Order Management', description: 'Digital work orders with routing, BOM, resource requirements, and step-by-step operator instructions.', icon: ClipboardList },
+      { title: 'OEE Tracking', description: 'Automatic availability, performance, and quality capture with drill-down root cause analysis for losses.', icon: BarChart3 },
+      { title: 'Production Scheduling', description: 'Visual production board with drag-and-drop scheduling, capacity checks, and real-time progress tracking.', icon: Calendar },
+      { title: 'Quality Management', description: 'In-process quality checks, SPC charts, defect recording, and automatic hold on out-of-control conditions.', icon: CheckCircle2 },
+      { title: 'Downtime Management', description: 'One-touch downtime logging with reason codes, duration tracking, and MTTR/MTBF analytics dashboards.', icon: PauseCircle },
+      { title: 'Material Traceability', description: 'Complete component genealogy linking finished goods to every raw material batch and production operation.', icon: Search },
+      { title: 'Operator Interface', description: 'Touchscreen operator terminals showing work order details, quality checks, material requirements, and alerts.', icon: Monitor },
+      { title: 'SCADA Integration', description: 'Direct machine data collection from PLCs, SCADA systems, and industrial controllers for automated OEE.', icon: Settings2 },
+      { title: 'Production Reports', description: 'Shift production reports, daily/weekly summaries, variance analysis, and regulatory-compliant batch records.', icon: TrendingUp },
     ]}
     useCases={[
       { industry: 'Automotive', useCase: 'Assembly line tracking and quality gates', outcome: 'Reduced rework by 40% through in-line quality enforcement' },

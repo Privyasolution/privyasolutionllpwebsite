@@ -1,7 +1,10 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Package, Camera, CheckCircle2, FileText, Lock, Truck, Search, ClipboardList, Radio, Calculator, Settings2 } from "lucide-react";
 import WeighbridgeScene from "@/components/service-detail/WeighbridgeScene";
 import ParcelWeighingScene from "@/components/service-detail/ParcelWeighingScene";
+import { DigitalScaleIcon } from "@/components/projects/DigitalScaleIcon";
+import type { IconComponent } from "@/types";
 
 interface Step {
   step: string;
@@ -15,29 +18,29 @@ interface Props {
   slug?: string;
 }
 
-const stepIcons: Record<string, string> = {
+const stepIcons: Record<string, IconComponent> = {
   // Single-operator weighment
-  "Parcel Placed":        "📦",
-  "Weight Captured":      "⚖️",
-  "Camera Captures":      "📷",
-  "Data Validated":       "✅",
-  "PDF Generated":        "📄",
-  "Record Stored":        "🔒",
+  "Parcel Placed":        Package,
+  "Weight Captured":      DigitalScaleIcon,
+  "Camera Captures":      Camera,
+  "Data Validated":       CheckCircle2,
+  "PDF Generated":        FileText,
+  "Record Stored":        Lock,
   // Dual-verification weighment
-  "Truck Arrives":        "🚛",
-  "CCTV Captures Plate":  "📷",
-  "1st Weighment":        "⚖️",
-  "Load / Unload":        "📦",
-  "CCTV Re-Verifies":     "🔍",
-  "2nd Weighment":        "⚖️",
-  "Net Weight & Report":  "📄",
+  "Truck Arrives":        Truck,
+  "CCTV Captures Plate":  Camera,
+  "1st Weighment":        DigitalScaleIcon,
+  "Load / Unload":        Package,
+  "CCTV Re-Verifies":     Search,
+  "2nd Weighment":        DigitalScaleIcon,
+  "Net Weight & Report":  FileText,
   // Pharma
-  "Batch Setup":          "📋",
-  "Balance Link":         "📡",
-  "Tare & Gross":         "⚖️",
-  "Net Weight":           "🧮",
-  "PDF Report":           "📄",
-  "Audit Log":            "🔒",
+  "Batch Setup":          ClipboardList,
+  "Balance Link":         Radio,
+  "Tare & Gross":         DigitalScaleIcon,
+  "Net Weight":           Calculator,
+  "PDF Report":           FileText,
+  "Audit Log":            Lock,
 };
 
 export default function ProcessFlow({ steps, title, slug }: Props) {
@@ -125,6 +128,7 @@ export default function ProcessFlow({ steps, title, slug }: Props) {
               {steps.map((p, i) => {
                 const isExitGroup = !isSingleOperator && isDualVerification && i >= 3;
                 const isFirstOfExitGroup = !isSingleOperator && isDualVerification && i === 3;
+                const StepIcon = stepIcons[p.label] || Settings2;
                 return (
                   <div key={p.step} className="contents">
                     {isFirstOfExitGroup && (
@@ -154,8 +158,8 @@ export default function ProcessFlow({ steps, title, slug }: Props) {
                         />
                         <span className="relative z-10">{p.step}</span>
                       </motion.div>
-                      <span className="text-base md:text-xl mb-1" role="img" aria-hidden="true">
-                        {stepIcons[p.label] || "⚙️"}
+                      <span className="flex items-center justify-center mb-1 text-brand-cyan" aria-hidden="true">
+                        <StepIcon className="w-4 h-4 md:w-5 md:h-5" />
                       </span>
                       <p className="font-heading font-semibold text-white text-[10px] md:text-sm mb-0.5 leading-tight">{p.label}</p>
                       <p className="text-[9px] md:text-xs text-gray-400 leading-relaxed max-w-[80px] md:max-w-[120px]">{p.desc}</p>
@@ -203,7 +207,9 @@ export default function ProcessFlow({ steps, title, slug }: Props) {
               <div className="flex flex-col items-center gap-2">
                 <div className="w-32 h-32 rounded-xl overflow-hidden border-2 border-brand-cyan/40"
                   style={{ background: "linear-gradient(135deg, #1E3A5F 0%, #0D1526 100%)" }}>
-                  <div className="w-full h-full flex items-center justify-center text-4xl">📦</div>
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Package className="w-10 h-10 text-brand-cyan" />
+                  </div>
                 </div>
                 <p className="text-[10px] text-gray-400 uppercase tracking-widest">Item Image</p>
               </div>
@@ -220,7 +226,9 @@ export default function ProcessFlow({ steps, title, slug }: Props) {
               <div className="flex flex-col items-center gap-2">
                 <div className="w-32 h-32 rounded-xl border-2 border-purple-400/40 p-3 flex flex-col gap-1"
                   style={{ background: "rgba(167,139,250,0.08)" }}>
-                  <div className="text-[8px] text-purple-300 font-bold uppercase">📄 PDF Receipt</div>
+                  <div className="text-[8px] text-purple-300 font-bold uppercase flex items-center gap-1">
+                    <FileText className="w-3 h-3" /> PDF Receipt
+                  </div>
                   <div className="flex-1 bg-white/5 rounded-lg flex items-center justify-center text-xs text-gray-400">
                     Image + Weight
                   </div>

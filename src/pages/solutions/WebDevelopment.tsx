@@ -1,5 +1,5 @@
 import React from 'react'
-import { Globe } from 'lucide-react'
+import { Globe, Atom, BarChart3, Smartphone, Link2, Lock, Cloud, Handshake, ShoppingCart, Rocket } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
 
 const WebDevelopment: React.FC = () => (
@@ -22,15 +22,15 @@ const WebDevelopment: React.FC = () => (
       'Complete source code ownership with full documentation',
     ]}
     features={[
-      { title: 'React / Angular / Vue', description: 'Modern frontend frameworks delivering fast, dynamic web interfaces with component-based architecture.', icon: '⚛️' },
-      { title: 'Enterprise Dashboards', description: 'Data-rich dashboards with real-time charts, KPIs, and analytics for management decision-making.', icon: '📊' },
-      { title: 'Progressive Web Apps', description: 'PWA development for offline capability, push notifications, and native app experience in the browser.', icon: '📱' },
-      { title: 'API-First Design', description: 'RESTful or GraphQL APIs enabling seamless integration with mobile apps, IoT systems, and third-party services.', icon: '🔗' },
-      { title: 'Authentication & Security', description: 'Multi-factor authentication, SSO, RBAC, encrypted data transmission, and security audit compliance.', icon: '🔒' },
-      { title: 'Cloud Deployment', description: 'Hosted on Azure, AWS, or Google Cloud with auto-scaling, CDN, and 99.9% uptime SLA.', icon: '☁️' },
-      { title: 'B2B Portals', description: 'Customer, supplier, and dealer portals with self-service order placement, tracking, and document management.', icon: '🤝' },
-      { title: 'E-commerce Integration', description: 'Product catalogs, online ordering, payment gateway integration, and inventory sync with warehouse systems.', icon: '🛒' },
-      { title: 'SEO & Performance', description: 'Server-side rendering, Core Web Vitals optimization, structured data, and Google Analytics integration.', icon: '🚀' },
+      { title: 'React / Angular / Vue', description: 'Modern frontend frameworks delivering fast, dynamic web interfaces with component-based architecture.', icon: Atom },
+      { title: 'Enterprise Dashboards', description: 'Data-rich dashboards with real-time charts, KPIs, and analytics for management decision-making.', icon: BarChart3 },
+      { title: 'Progressive Web Apps', description: 'PWA development for offline capability, push notifications, and native app experience in the browser.', icon: Smartphone },
+      { title: 'API-First Design', description: 'RESTful or GraphQL APIs enabling seamless integration with mobile apps, IoT systems, and third-party services.', icon: Link2 },
+      { title: 'Authentication & Security', description: 'Multi-factor authentication, SSO, RBAC, encrypted data transmission, and security audit compliance.', icon: Lock },
+      { title: 'Cloud Deployment', description: 'Hosted on Azure, AWS, or Google Cloud with auto-scaling, CDN, and 99.9% uptime SLA.', icon: Cloud },
+      { title: 'B2B Portals', description: 'Customer, supplier, and dealer portals with self-service order placement, tracking, and document management.', icon: Handshake },
+      { title: 'E-commerce Integration', description: 'Product catalogs, online ordering, payment gateway integration, and inventory sync with warehouse systems.', icon: ShoppingCart },
+      { title: 'SEO & Performance', description: 'Server-side rendering, Core Web Vitals optimization, structured data, and Google Analytics integration.', icon: Rocket },
     ]}
     useCases={[
       { industry: 'Manufacturing', useCase: 'B2B dealer portal for order management', outcome: '2,000+ dealers self-serving orders reducing call center load by 80%' },

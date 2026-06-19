@@ -1,6 +1,7 @@
 import React from 'react'
-import { FlaskConical } from 'lucide-react'
+import { FlaskConical, ClipboardList, Lock, BarChart3, Printer, Microscope, Timer, TrendingUp } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
+import { DigitalScaleIcon } from '@/components/projects/DigitalScaleIcon'
 
 const PharmaWeighing: React.FC = () => (
   <ServicePage
@@ -22,15 +23,15 @@ const PharmaWeighing: React.FC = () => (
       'Paperless dispensing room operations',
     ]}
     features={[
-      { title: 'Balance Integration', description: 'Direct RS232/USB/Ethernet integration with analytical, precision, and floor-scale weighing balances across the facility.', icon: '⚖️' },
-      { title: 'GMP Dispensing', description: 'Step-by-step dispensing workflow with mandatory tare, pre-weigh, and post-weigh verification at every stage.', icon: '🧪' },
-      { title: 'Electronic Batch Records', description: 'Complete eBMR with automatic capture of weights, operator, date/time, and balance calibration status.', icon: '📋' },
-      { title: '21 CFR Part 11', description: 'Full electronic signature support, audit trail, user access control, and data integrity compliance.', icon: '🔒' },
-      { title: 'Batch Variance Control', description: 'Theoretical vs actual batch quantity comparison with automatic alerts on variance exceeding defined limits.', icon: '📊' },
-      { title: 'Label Printing', description: 'GMP-compliant dispensing labels with lot, quantity, operator, date, and unique dispensing ID.', icon: '🖨️' },
-      { title: 'Sampling Management', description: 'QC sampling workflows with sample identification, storage location tracking, and LIMS integration.', icon: '🔬' },
-      { title: 'Calibration Tracking', description: 'Balance calibration schedule management with blocking of uncalibrated instruments and certificate storage.', icon: '⏱️' },
-      { title: 'Dashboard & Reports', description: 'Shift-wise dispensing summary, variance reports, compliance dashboards, and regulatory-ready PDFs.', icon: '📈' },
+      { title: 'Balance Integration', description: 'Direct RS232/USB/Ethernet integration with analytical, precision, and floor-scale weighing balances across the facility.', icon: DigitalScaleIcon },
+      { title: 'GMP Dispensing', description: 'Step-by-step dispensing workflow with mandatory tare, pre-weigh, and post-weigh verification at every stage.', icon: FlaskConical },
+      { title: 'Electronic Batch Records', description: 'Complete eBMR with automatic capture of weights, operator, date/time, and balance calibration status.', icon: ClipboardList },
+      { title: '21 CFR Part 11', description: 'Full electronic signature support, audit trail, user access control, and data integrity compliance.', icon: Lock },
+      { title: 'Batch Variance Control', description: 'Theoretical vs actual batch quantity comparison with automatic alerts on variance exceeding defined limits.', icon: BarChart3 },
+      { title: 'Label Printing', description: 'GMP-compliant dispensing labels with lot, quantity, operator, date, and unique dispensing ID.', icon: Printer },
+      { title: 'Sampling Management', description: 'QC sampling workflows with sample identification, storage location tracking, and LIMS integration.', icon: Microscope },
+      { title: 'Calibration Tracking', description: 'Balance calibration schedule management with blocking of uncalibrated instruments and certificate storage.', icon: Timer },
+      { title: 'Dashboard & Reports', description: 'Shift-wise dispensing summary, variance reports, compliance dashboards, and regulatory-ready PDFs.', icon: TrendingUp },
     ]}
     useCases={[
       { industry: 'API Manufacturing', useCase: 'Bulk dispensing with batch variance control', outcome: 'Reduced material variance from 2.1% to 0.3% across batches' },

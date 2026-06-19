@@ -1,12 +1,14 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { ClipboardList, Radio, Calculator, FileText, Lock } from "lucide-react";
+import { DigitalScaleIcon } from "@/components/projects/DigitalScaleIcon";
 
 const stages = [
   {
     id: 1,
     label: "Batch Setup",
     short: "Product, stage & material master loaded into system",
-    icon: "📋",
+    icon: ClipboardList,
     color: "#00C2E0",
     detail: "Operator selects batch number, product, stage, and material from master data. System validates against approved specifications before proceeding.",
     metric: { label: "Batch No.", value: "WIS-2025-0042" },
@@ -15,7 +17,7 @@ const stages = [
     id: 2,
     label: "Balance Link",
     short: "LAN/Wi-Fi balance auto-detected & assigned",
-    icon: "📡",
+    icon: Radio,
     color: "#2B5CE6",
     detail: "System auto-discovers calibrated balances on the network. Device ID, calibration status, and last verification date are confirmed before linking.",
     metric: { label: "Device", value: "BAL-003 ✓" },
@@ -24,7 +26,7 @@ const stages = [
     id: 3,
     label: "Tare & Gross",
     short: "Live weight captured; tolerance check applied instantly",
-    icon: "⚖️",
+    icon: DigitalScaleIcon,
     color: "#00C2E0",
     detail: "Container tare weight is captured first. Gross weight streams live from the balance. System applies ±tolerance check in real time.",
     metric: { label: "Gross", value: "5.48 kg" },
@@ -33,7 +35,7 @@ const stages = [
     id: 4,
     label: "Net Weight",
     short: "Auto calculated; out-of-spec flagged immediately",
-    icon: "🧮",
+    icon: Calculator,
     color: "#2B5CE6",
     detail: "Net = Gross − Tare. Calculated automatically with zero manual input. Out-of-spec results trigger an immediate alert and block progression.",
     metric: { label: "Net", value: "5.24 kg ✓" },
@@ -42,7 +44,7 @@ const stages = [
     id: 5,
     label: "PDF Report",
     short: "Weigh slip & Weight Recording Sheet auto-generated",
-    icon: "📄",
+    icon: FileText,
     color: "#00C2E0",
     detail: "System auto-generates a GMP-compliant Weigh Slip and Weight Recording Sheet (WRS) with operator ID, timestamp, and electronic signature.",
     metric: { label: "Report", value: "Auto-generated" },
@@ -51,7 +53,7 @@ const stages = [
     id: 6,
     label: "Audit Log",
     short: "Immutable timestamped log stored securely",
-    icon: "🔒",
+    icon: Lock,
     color: "#2B5CE6",
     detail: "Every action is written to an immutable, encrypted audit trail. ALCOA+ compliant — Attributable, Legible, Contemporaneous, Original, Accurate.",
     metric: { label: "Trail", value: "ALCOA+ ✓" },
@@ -164,7 +166,9 @@ export default function PharmaProcessFlow() {
                       />
                       <span className="relative z-10">{s.id}</span>
                     </motion.div>
-                    <span className="text-base lg:text-xl mb-1" role="img" aria-hidden="true">{s.icon}</span>
+                    <span className="flex items-center justify-center mb-1 text-brand-cyan" aria-hidden="true">
+                      <s.icon className="w-4 h-4 lg:w-5 lg:h-5" />
+                    </span>
                     <p className={`font-heading font-semibold text-[10px] lg:text-sm mb-0.5 leading-tight transition-colors ${
                       active === s.id ? "text-brand-cyan" : "text-white"
                     }`}>
@@ -211,7 +215,12 @@ function StageCard({
           {stage.id}
         </div>
         <div className="flex items-center gap-3 flex-1 min-w-0 overflow-hidden">
-          <span className="text-xl flex-shrink-0">{stage.icon}</span>
+          <span
+            className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+            style={{ background: `${stage.color}1A`, color: stage.color }}
+          >
+            <stage.icon className="w-4 h-4" />
+          </span>
           <div className="min-w-0">
             <p className={`font-heading font-semibold text-sm transition-colors ${isActive ? "text-brand-cyan" : "text-white"}`}>
               {stage.label}
@@ -418,7 +427,9 @@ function PharmaLabScene({ activeStage, inView }: { activeStage: number | null; i
             className="absolute bottom-4 left-4 w-40 rounded-xl p-3"
             style={{ background: "rgba(13,21,38,0.95)", border: "1px solid rgba(167,139,250,0.4)" }}
           >
-            <div className="text-[11px] text-purple-300 font-bold uppercase tracking-widest mb-2">📄 PDF Generated</div>
+            <div className="text-[11px] text-purple-300 font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
+              <FileText className="w-3.5 h-3.5" /> PDF Generated
+            </div>
             {[["Weigh Slip", "✓ Auto"], ["WRS Report", "✓ Auto"], ["e-Signature", "✓ Applied"]].map(([l, v]) => (
               <div key={l} className="flex justify-between py-0.5">
                 <span className="text-[10px] text-gray-400">{l}</span>
@@ -439,7 +450,9 @@ function PharmaLabScene({ activeStage, inView }: { activeStage: number | null; i
             className="absolute bottom-4 left-4 w-[200px] rounded-xl p-3"
             style={{ background: "rgba(13,21,38,0.95)", border: "1px solid rgba(0,194,224,0.3)" }}
           >
-            <div className="text-[12px] text-brand-cyan font-bold uppercase tracking-widest mb-2">🔒 Audit Trail</div>
+            <div className="text-[12px] text-brand-cyan font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
+              <Lock className="w-3.5 h-3.5" /> Audit Trail
+            </div>
             {["Batch setup – 09:14:02", "Balance linked – 09:14:18", "Tare captured – 09:15:03", "Net weight – 09:15:31", "Report generated – 09:15:45"].map((entry, i) => (
               <motion.div key={entry}
                 initial={{ opacity: 0, x: -8 }}

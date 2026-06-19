@@ -1,5 +1,5 @@
 import React from 'react'
-import { Shield } from 'lucide-react'
+import { Shield, Phone, Monitor, Timer, Wrench, Lock, TrendingUp, GraduationCap, HardDrive, Zap } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
 
 const AMC: React.FC = () => (
@@ -22,15 +22,15 @@ const AMC: React.FC = () => (
       'Dedicated account manager who knows your system inside out',
     ]}
     features={[
-      { title: 'Dedicated Help Desk', description: 'Technical support through dedicated phone hotline, email ticketing, and remote desktop access during business hours and on-call for critical issues.', icon: '📞' },
-      { title: 'Remote Monitoring', description: 'Proactive monitoring of system health, database performance, service availability, and integration status.', icon: '🖥️' },
-      { title: 'SLA Commitments', description: 'Defined response times: Critical issues in 2 hours, High in 4 hours, Medium in 8 hours, Low in 24 hours.', icon: '⏱️' },
-      { title: 'Preventive Maintenance', description: 'Scheduled preventive maintenance visits, database optimization, log cleanup, and performance tuning.', icon: '🔧' },
-      { title: 'Security Updates', description: 'Regular security patches, OS updates, and vulnerability assessments included in all AMC plans.', icon: '🔒' },
-      { title: 'Performance Optimization', description: 'Quarterly performance reviews with database query optimization, index tuning, and cache configuration.', icon: '📈' },
-      { title: 'User Training', description: 'Refresher training for new users, advanced feature training, and onboarding for system changes.', icon: '🎓' },
-      { title: 'Backup Management', description: 'Automated backup configuration, regular verification, offsite backup, and disaster recovery testing.', icon: '💾' },
-      { title: 'Enhancement Requests', description: 'Minor enhancements and configuration changes handled within AMC — no surprise bills for small changes.', icon: '⚡' },
+      { title: 'Dedicated Help Desk', description: 'Technical support through dedicated phone hotline, email ticketing, and remote desktop access during business hours and on-call for critical issues.', icon: Phone },
+      { title: 'Remote Monitoring', description: 'Proactive monitoring of system health, database performance, service availability, and integration status.', icon: Monitor },
+      { title: 'SLA Commitments', description: 'Defined response times: Critical issues in 2 hours, High in 4 hours, Medium in 8 hours, Low in 24 hours.', icon: Timer },
+      { title: 'Preventive Maintenance', description: 'Scheduled preventive maintenance visits, database optimization, log cleanup, and performance tuning.', icon: Wrench },
+      { title: 'Security Updates', description: 'Regular security patches, OS updates, and vulnerability assessments included in all AMC plans.', icon: Lock },
+      { title: 'Performance Optimization', description: 'Quarterly performance reviews with database query optimization, index tuning, and cache configuration.', icon: TrendingUp },
+      { title: 'User Training', description: 'Refresher training for new users, advanced feature training, and onboarding for system changes.', icon: GraduationCap },
+      { title: 'Backup Management', description: 'Automated backup configuration, regular verification, offsite backup, and disaster recovery testing.', icon: HardDrive },
+      { title: 'Enhancement Requests', description: 'Minor enhancements and configuration changes handled within AMC — no surprise bills for small changes.', icon: Zap },
     ]}
     useCases={[
       { industry: 'Manufacturing', useCase: 'MES and WMS maintenance', outcome: '99.7% system uptime maintained across 3 years of AMC' },

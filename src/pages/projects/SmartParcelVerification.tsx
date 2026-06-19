@@ -12,7 +12,7 @@ const ScaleIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const data: ProjectData = {
   meta: {
-    title: 'Smart Parcel Verification System | Privya Solution LLP',
+    title: 'VisionVerify | Privya Solution LLP',
     description:
       'Auto weight capture + camera verification system for courier and logistics — instant PDF receipt with embedded photo, zero billing disputes, 5× faster parcel processing.',
     canonical: '/projects/smart-parcel-verification',
@@ -22,7 +22,7 @@ const data: ProjectData = {
     badge: 'Logistics & Courier Operations',
     badgeColor: '#8B5CF6',
     client: 'Logistics & Courier Industry',
-    projectName: 'Smart Parcel Verification System',
+    projectName: 'VisionVerify',
     tagline: 'Auto Weight Capture + Camera Integration + Instant PDF Receipt',
     description:
       'A parcel weighing and verification platform that combines auto weight capture from a calibrated scale with an integrated IP camera — producing an instant PDF receipt containing the parcel photo, weight, timestamp, and operator ID. Built for courier sorting centres and e-commerce fulfilment warehouses that need to eliminate billing disputes and accelerate throughput.',
@@ -145,7 +145,7 @@ const data: ProjectData = {
   ],
 
   outcome:
-    'The Smart Parcel Verification System transformed parcel weighing from a slow, error-prone manual process into a sub-10-second, dispute-proof digital workflow. Billing disputes — previously running at 8–12% of shipments — dropped to zero within the first month. Operators process five times more parcels per shift, and every record is permanently archived with photo and weight evidence.',
+    'VisionVerify transformed parcel weighing from a slow, error-prone manual process into a sub-10-second, dispute-proof digital workflow. Billing disputes — previously running at 8–12% of shipments — dropped to zero within the first month. Operators process five times more parcels per shift, and every record is permanently archived with photo and weight evidence.',
 }
 
 const SmartParcelVerification: React.FC = () => <ProjectDetailPage data={data} />

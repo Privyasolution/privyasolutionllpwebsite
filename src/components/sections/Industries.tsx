@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Factory, FlaskConical, Package, Truck, Store, HeartPulse, Plane } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { viewportConfig } from '@/utils/animations'
 
@@ -9,7 +9,7 @@ const industries = [
   {
     name: 'Manufacturing',
     description: 'MES, quality control, production tracking, and factory automation solutions.',
-    icon: '🏭',
+    icon: Factory,
     color: 'from-blue-500/20 to-blue-600/5',
     border: 'hover:border-blue-500/30',
     solutions: ['MES', 'WMS', 'IoT Automation'],
@@ -17,7 +17,7 @@ const industries = [
   {
     name: 'Pharmaceutical',
     description: 'GMP-compliant weighing, batch traceability, and regulatory reporting systems.',
-    icon: '⚗️',
+    icon: FlaskConical,
     color: 'from-cyan-500/20 to-cyan-600/5',
     border: 'hover:border-cyan-500/30',
     solutions: ['Pharma Weighing', 'Barcode Traceability', 'MES'],
@@ -25,7 +25,7 @@ const industries = [
   {
     name: 'Warehousing',
     description: 'End-to-end warehouse operations from receiving to dispatch with real-time visibility.',
-    icon: '📦',
+    icon: Package,
     color: 'from-green-500/20 to-green-600/5',
     border: 'hover:border-green-500/30',
     solutions: ['WMS', 'Barcode & RFID', 'IoT'],
@@ -33,7 +33,7 @@ const industries = [
   {
     name: 'Logistics',
     description: 'Weighbridge management, fleet tracking, and supply chain integration solutions.',
-    icon: '🚛',
+    icon: Truck,
     color: 'from-orange-500/20 to-orange-600/5',
     border: 'hover:border-orange-500/30',
     solutions: ['Weighbridge', 'WMS', 'Custom Software'],
@@ -41,7 +41,7 @@ const industries = [
   {
     name: 'Retail',
     description: 'Inventory management, POS integration, and demand forecasting systems.',
-    icon: '🏪',
+    icon: Store,
     color: 'from-purple-500/20 to-purple-600/5',
     border: 'hover:border-purple-500/30',
     solutions: ['Barcode', 'WMS', 'Web Apps'],
@@ -49,7 +49,7 @@ const industries = [
   {
     name: 'Healthcare',
     description: 'Patient data management, medical inventory, and compliance tracking solutions.',
-    icon: '🏥',
+    icon: HeartPulse,
     color: 'from-red-500/20 to-red-600/5',
     border: 'hover:border-red-500/30',
     solutions: ['Custom Software', 'Barcode', 'Web Apps'],
@@ -57,7 +57,7 @@ const industries = [
   {
     name: 'Transportation',
     description: 'Fleet management, route optimization, and logistics tracking systems.',
-    icon: '✈️',
+    icon: Plane,
     color: 'from-sky-500/20 to-sky-600/5',
     border: 'hover:border-sky-500/30',
     solutions: ['Weighbridge', 'Custom Software', 'IoT'],
@@ -90,8 +90,8 @@ export const Industries: React.FC = () => {
               className={`card-enterprise p-6 cursor-pointer group ${industry.border}`}
             >
               {/* Icon */}
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${industry.color} flex items-center justify-center mb-5 text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                {industry.icon}
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${industry.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                <industry.icon className="w-7 h-7 text-white" />
               </div>
 
               {/* Name & Description */}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScanLine } from 'lucide-react'
+import { ScanLine, Barcode as BarcodeIcon, Radio, Search, AlarmClock, Printer, CheckCircle2, AlertTriangle, Smartphone, Globe } from 'lucide-react'
 import { ServicePage } from '@/components/layout/ServicePage'
 
 const Barcode: React.FC = () => (
@@ -22,15 +22,15 @@ const Barcode: React.FC = () => (
       'Audit-ready reporting for regulatory compliance',
     ]}
     features={[
-      { title: 'Barcode Generation', description: 'Generate 1D barcodes (Code39, Code128, EAN) and 2D codes (QR, DataMatrix, PDF417) with custom label printing.', icon: '📊' },
-      { title: 'RFID Integration', description: 'High-read-rate RFID scanning for pallet, carton, and item-level tracking in fast-moving operations.', icon: '📡' },
-      { title: 'Batch Traceability', description: 'Complete forward and backward traceability by batch, lot, and serial number across the entire supply chain.', icon: '🔍' },
-      { title: 'Expiry Management', description: 'Automatic FEFO enforcement, expiry alerts, and blocked-stock management for perishable products.', icon: '⏰' },
-      { title: 'Label Design', description: 'Built-in label designer supporting ZPL, EPL, and PDF printing with dynamic data merge and compliance templates.', icon: '🖨️' },
-      { title: 'GS1 Compliance', description: 'Full GS1 standard support including GTIN, GLN, SSCC, and GS1-128 labels for pharma and food industries.', icon: '✅' },
-      { title: 'Recall Management', description: 'One-click batch recall with complete impact analysis showing all affected customers and locations.', icon: '🚨' },
-      { title: 'Mobile Scanning', description: 'Android and iOS apps for handheld scanning, label printing, and real-time inventory updates on the go.', icon: '📱' },
-      { title: 'Supplier Portal', description: 'Web portal for suppliers to register incoming goods, print labels, and share compliance documents.', icon: '🌐' },
+      { title: 'Barcode Generation', description: 'Generate 1D barcodes (Code39, Code128, EAN) and 2D codes (QR, DataMatrix, PDF417) with custom label printing.', icon: BarcodeIcon },
+      { title: 'RFID Integration', description: 'High-read-rate RFID scanning for pallet, carton, and item-level tracking in fast-moving operations.', icon: Radio },
+      { title: 'Batch Traceability', description: 'Complete forward and backward traceability by batch, lot, and serial number across the entire supply chain.', icon: Search },
+      { title: 'Expiry Management', description: 'Automatic FEFO enforcement, expiry alerts, and blocked-stock management for perishable products.', icon: AlarmClock },
+      { title: 'Label Design', description: 'Built-in label designer supporting ZPL, EPL, and PDF printing with dynamic data merge and compliance templates.', icon: Printer },
+      { title: 'GS1 Compliance', description: 'Full GS1 standard support including GTIN, GLN, SSCC, and GS1-128 labels for pharma and food industries.', icon: CheckCircle2 },
+      { title: 'Recall Management', description: 'One-click batch recall with complete impact analysis showing all affected customers and locations.', icon: AlertTriangle },
+      { title: 'Mobile Scanning', description: 'Android and iOS apps for handheld scanning, label printing, and real-time inventory updates on the go.', icon: Smartphone },
+      { title: 'Supplier Portal', description: 'Web portal for suppliers to register incoming goods, print labels, and share compliance documents.', icon: Globe },
     ]}
     useCases={[
       { industry: 'Pharmaceutical', useCase: 'Serialization and track-and-trace compliance', outcome: 'Met Schedule M and DSCSA requirements with zero compliance failures' },

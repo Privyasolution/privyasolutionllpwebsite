@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle, Factory, FlaskConical, Package, Truck, Store, HeartPulse, Ship } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { viewportConfig } from '@/utils/animations'
 import { CTA } from '@/components/sections/CTA'
@@ -10,7 +10,7 @@ const industries = [
   {
     id: 'manufacturing',
     name: 'Manufacturing',
-    icon: '🏭',
+    icon: Factory,
     tagline: 'Smart Factory, Superior Output',
     color: 'from-blue-600 to-cyan-500',
     glow: 'rgba(37,99,235,0.3)',
@@ -37,7 +37,7 @@ const industries = [
   {
     id: 'pharmaceutical',
     name: 'Pharmaceutical',
-    icon: '⚗️',
+    icon: FlaskConical,
     tagline: 'GMP Compliance, Precision Operations',
     color: 'from-violet-600 to-purple-500',
     glow: 'rgba(124,58,237,0.3)',
@@ -64,7 +64,7 @@ const industries = [
   {
     id: 'warehousing',
     name: 'Warehousing',
-    icon: '📦',
+    icon: Package,
     tagline: 'Intelligent Storage, Perfect Fulfillment',
     color: 'from-green-600 to-emerald-500',
     glow: 'rgba(5,150,105,0.3)',
@@ -91,7 +91,7 @@ const industries = [
   {
     id: 'logistics',
     name: 'Logistics',
-    icon: '🚛',
+    icon: Truck,
     tagline: 'Faster Movement, Smarter Operations',
     color: 'from-orange-600 to-amber-500',
     glow: 'rgba(234,88,12,0.3)',
@@ -118,7 +118,7 @@ const industries = [
   {
     id: 'retail',
     name: 'Retail',
-    icon: '🏪',
+    icon: Store,
     tagline: 'Smart Inventory, Happy Customers',
     color: 'from-pink-600 to-rose-500',
     glow: 'rgba(219,39,119,0.3)',
@@ -145,7 +145,7 @@ const industries = [
   {
     id: 'healthcare',
     name: 'Healthcare',
-    icon: '🏥',
+    icon: HeartPulse,
     tagline: 'Digital Health, Better Outcomes',
     color: 'from-red-600 to-rose-500',
     glow: 'rgba(220,38,38,0.3)',
@@ -172,7 +172,7 @@ const industries = [
   {
     id: 'transportation',
     name: 'Transportation',
-    icon: '🚢',
+    icon: Ship,
     tagline: 'Optimized Routes, Maximum Utilization',
     color: 'from-sky-600 to-blue-500',
     glow: 'rgba(2,132,199,0.3)',
@@ -265,7 +265,7 @@ const Industries: React.FC = () => {
                     : 'bg-white/5 border border-white/10 text-text-muted hover:text-white hover:border-white/20'
                 }`}
               >
-                <span>{ind.icon}</span>
+                <ind.icon className="w-4 h-4" />
                 {ind.name}
               </motion.button>
             ))}
@@ -284,9 +284,9 @@ const Industries: React.FC = () => {
               {/* Left */}
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${active.color} flex items-center justify-center text-2xl sm:text-3xl`}
+                  <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${active.color} flex items-center justify-center`}
                     style={{ boxShadow: `0 0 40px ${active.glow}` }}>
-                    {active.icon}
+                    <active.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <div>
                     <div className="text-accent text-xs sm:text-sm font-medium mb-1">{active.tagline}</div>
@@ -378,8 +378,8 @@ const Industries: React.FC = () => {
                 }}
                 className="card-enterprise p-5 sm:p-6 text-center group"
               >
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${ind.color} flex items-center justify-center text-xl sm:text-2xl mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
-                  {ind.icon}
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${ind.color} flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
+                  <ind.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-sm sm:text-base">{ind.name}</h3>
               </motion.button>

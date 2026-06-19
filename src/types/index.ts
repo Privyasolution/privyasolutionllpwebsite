@@ -1,5 +1,10 @@
 // ── Shared domain types ───────────────────────────────────────────────────
 
+import type { ComponentType } from 'react'
+
+/** A component that accepts a `className` — covers Lucide icons and custom SVG icon components */
+export type IconComponent = ComponentType<{ className?: string }>
+
 export interface NavLink {
   name: string
   href: string
@@ -52,7 +57,7 @@ export interface Project {
   description: string
   tags: string[]
   color: string
-  icon: string
+  icon: IconComponent
 }
 
 // ── Viewport / animation ──────────────────────────────────────────────────
